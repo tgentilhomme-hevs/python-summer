@@ -12,13 +12,10 @@ book:
     - index.qmd
     - part: "First Part"
       chapters: 
-       - Week1/index.qmd
+       - Course1/index.qmd
     - part: "Second Part"
       chapters: 
-       - Week2/index.qmd
-    - part: "Third Part"
-    - part: "Fourth Part"
-    - part: "Fifth Part"
+       - Course2/index.qmd
 
 format:
   live-html:

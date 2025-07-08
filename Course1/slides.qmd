@@ -1,0 +1,27 @@
+---
+title: "Python Summer Course"
+subtitle: "Course 1: Python Basics & Objects"
+format:
+  live-revealjs:
+    slide-number: true
+    brand: ../_brand.yml
+    theme: ../hevs.scss
+    show-slide-number: all
+    preview-links: auto
+    chalkboard: true
+    logo: https://www.hevs.ch/_nuxt/img/logo_hesso.9af1d79.svg
+    footer: "Python Basics & Objects"
+    
+execute:
+  echo: true       # ← this shows code
+  output: true     # ← this shows output
+  eval: true       # ← this runs the code
+---
+
+## Introduction
+![My first code](../img/image_intro_course1.png)
+
+```{pyodide}
+print("Hello World!")
+print("Welcome to the Python Summer Course!")
+```
