@@ -1,0 +1,70 @@
+on:
+  workflow_dispatch:
+  push:
+    branches: main
+
+name: Quarto Publish
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tinytex: true
+      - name: Install Python and Dependencies
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+      - run: pip install jupyter
+      - run: pip install -r requirements.txt
+      - name: Remove .onlyteacher blocks from .qmd files
+        run: |
+          for file in Week*/*.qmd; do
+            [ -f "$file" ] || continue  # Skip if not a regular file
+            sed -i '/::: {.onlyteacher}/,/:::/d' "$file"
+          done
+      - name: Render Book and Slides
+        run: |
+          quarto render --profile book
+      - name: Build PDFs from slides
+        run: |
+          python3 -m http.server 8000 &
+          find ./_slides -name 'slides.html' | while read slide; do
+          echo "Converting $slide to PDF"
+          pdf_path="${slide%.html}.pdf"
+          relative_slide_path="${slide#./}"
+          url_path="/slides/$relative_slide_path"
+          # Output path inside container: use /tmp
+          tmp_pdf_name="$(basename "$pdf_path")"
+          tmp_pdf_path="/tmp/$tmp_pdf_name"
+          clean_slide=$(echo "$slide" | sed 's|^\./||')
+          echo "http://localhost:8000/$clean_slide"
+          docker run --rm -t --network=host -v "$(pwd)":/slides -v /tmp:/tmp astefanutti/decktape "http://localhost:8000/$clean_slide" "$tmp_pdf_path"
+          cp "/tmp/$tmp_pdf_name" "$pdf_path"
+          done
+      - name: Deploy _book to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_book
+          publish_branch: gh-pages
+          keep_files: true
+
+      - name: Deploy _slides to gh-pages (subfolder)
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_slides
+          publish_branch: gh-pages
+          destination_dir: slides
+          keep_files: true
