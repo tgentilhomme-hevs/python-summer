@@ -567,7 +567,6 @@ Define a class with attributes: name, age, grades, and methods to:
 ---
 
 ### Solution
-
 ```{pyodide}
 class Student:
     def __init__(self, name, age, grades=None):

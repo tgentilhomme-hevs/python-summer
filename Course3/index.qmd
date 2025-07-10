@@ -1,0 +1,4 @@
+# Week title
+
+[👨🏻‍🏫 Slides]({{< var base_url>}}slides/Course3/slides.html){.btn .btn-outline-primary .btn role="button"} 
+[Slides PDF]({{< var base_url>}}slides/Course3/slides.pdf){.btn .btn-outline-secondary .btn role="button"} 
