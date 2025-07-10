@@ -31,19 +31,19 @@ print("Welcome to the Python Summer Course!")
 > “Computer programming or coding is the composition of sequences of instructions, called programs, that computers can follow to perform tasks. It involves designing and implementing algorithms, step-by-step specifications of procedures, by writing code in one or more programming languages.”  
 > — Wikipedia
 
-## 🐍 Why Learn with Python?
+## Why Learn with Python?
 
-✅ Easy to read and write — its simple syntax is close to English  
-✅ Beginner-friendly — widely used in teaching and well-documented  
-✅ Versatile — used in data science, AI, web development, automation, and more  
-✅ Large community — thousands of free libraries and tutorials available  
-✅ Cross-platform — runs on Windows, macOS, and Linux 
+✅ Easy to read and write; its simple syntax is close to English  
+✅ Beginner-friendly: widely used in teaching and well-documented  
+✅ Versatile: used in data science, AI, web development, automation...
+
+✅ Cross-platform: runs on Windows, macOS, and Linux 
 
 ⚠️ Slower performance compared to compiled languages like C/C++  
 ⚠️ Not ideal for mobile app development or real-time systems
 
 
-## 🛠️ Setting Up Python: How It Works
+## Setting Up Python: How It Works
 
 Python is an interpreted language:
 
@@ -57,11 +57,13 @@ To run Python code, you need:
 
 - A code editor (e.g. VS Code, Thonny, Jupyter Notebook)
 
-## ❓ What do I use?
+## What do I use?
 
 ```{pyodide}
-import sys
-print("I use this kernel to run this code:")
+import sys # We will see what it means later
+# By the way, this is how we write comments in Python
+
+print("I print who is running my Python")
 print(sys.executable)
 ```
 
@@ -80,24 +82,48 @@ print(sys.executable)
 3. Create a new Notebook
 4. Start programming!
 
-## ▶️ notebooks in 2 mins
+## notebooks in 2 mins
 
 - Write text (Markdown) => + Text
 - Write code (Python) = > + Code
 - Run cells
 
-## 🧮 Python as a Calculator
+## Python as a Calculator
 
 You can just write operation directlx into the cells
 
 ```{pyodide}
 3 + 1
 ```
-👉 Your turn: try it out using `+ - * / %  ** //`
+Your turn: try it out using `+ - * / %  ** //`
+
+## `print()` and `input()` in Python
+
+These are basic but powerful tools for **interacting with the user**.
+
+`print()`: Display output
+
+`input()`: Get user input
+
+Used to **ask the user for information**. Always returns a **string**.
+
+## Example
+
+```{.python}
+user_name = input("What is your name? ")
+print("Nice to meet you,", user_name)
+```
+
+⚠️ If you need a number from `input()`, use `int()` or `float()`:
+
+```{.python}
+age = int(input("Enter your age: "))
+print("In 5 years, you’ll be", age + 5)
+```
 
 ## Variable
 
-A variable is a name that stores a value in your program,  like a labeled box that holds data.
+A variable is a name that stores a value in your program, like a labeled box that holds data.
 
 It lets you remember values (like numbers, text, results of calculations)
 
@@ -105,6 +131,7 @@ You can use or change the value later
 
 Python creates the variable when you assign it a value
 
+## Variable: example
 
 ```{pyodide}
 # Assign values to variables
@@ -126,47 +153,35 @@ print("Age: ", age)
 
 
 ## Types
+A type in Python defines what kind of data a value is, and what you can do with it.
 
 ```{pyodide}
 # Integer
 age = 25
-print("Age:", age, "->", type(age))  # <class 'int'>
+print("Age:", age, "->", type(age))
 
 # Float
 height = 1.75
-print("Height:", height, "->", type(height))  # <class 'float'>
+print("Height:", height, "->", type(height))
 
 # String
 name = "Alice"
-print("Name:", name, "->", type(name))  # <class 'str'>
+print("Name:", name, "->", type(name))
 
 # Boolean
 is_student = True
-print("Is student:", is_student, "->", type(is_student))  # <class 'bool'>
+print("Is student:", is_student, "->", type(is_student))
 
 # List
 grades = [88, 92, 79]
-print("Grades:", grades, "->", type(grades))  # <class 'list'>
-
-# Tuple
-coordinates = (10, 20)
-print("Coordinates:", coordinates, "->", type(coordinates))  # <class 'tuple'>
-
-# Dictionary
-person = {"name": "Alice", "age": 25}
-print("Person:", person, "->", type(person))  # <class 'dict'>
-
-# Set
-unique_numbers = {1, 2, 3, 2}
-print("Unique numbers:", unique_numbers, "->", type(unique_numbers))  # <class 'set'>
+print("Grades:", grades, "->", type(grades))
 
 # NoneType
 nothing = None
-print("Nothing:", nothing, "->", type(nothing))  # <class 'NoneType'>
+print("Nothing:", nothing, "->", type(nothing))
 ```
 
-## 🧱 Everything is an Object in Python
-In Python, **everything**, i.e. numbers, strings, functions, etc., is an object.
+## Everything is an Object in Python
 
 Objects have data (attributes) and behaviors (methods)
 
@@ -174,7 +189,7 @@ You can call methods with dot syntax: object.method()
 
 Even simple things like numbers and strings are full objects
 
-## 🧱 Everything is an Object in Python
+## Everything is an Object in Python
 
 An object is an instanciation of a `class` (we will see what a `class` is later).
 
@@ -193,7 +208,61 @@ print(type(42))
 print(type("hi"))        
 print(type(int))
 ```
-## 🟢 Boolean Conditions in Python
+
+## String Manipulation in Python
+
+Strings are sequences of characters: you can access, combine, and transform them easily.
+
+```{pyodide}
+text = "Python"
+print(text[0])
+print(text[-1])
+print(text[1:4])
+```
+
+## Common string methods
+
+```{pyodide}
+print("hello".upper())    
+print("HELLO".lower())     
+```
+
+## Common string methods
+
+```{pyodide}
+print("Python".startswith("Py")) 
+```
+```{pyodide}
+print("data,science".split(","))
+```
+```{pyodide}
+print("  clean  ".strip()) 
+```
+
+## Common string methods
+
+```{pyodide}
+text = "My name is {} and I am  {}".format("Bob", 40)
+print(text) 
+```
+
+## Common string methods
+
+```{pyodide}
+# Chain of methods
+text = " my veRy UGly?? ## text   "
+clean_text = text.strip().replace("?", "").replace("#", "").replace("  ", " ").lower() 
+print(clean_text) 
+```
+## Concatenation and repetition
+
+```{pyodide}
+"Py" + "thon"         # 'Python'
+"ha" * 3              # 'hahaha'
+```
+Strings are **immutable**: you can’t change them directly, but you can create new ones.
+
+## Boolean Conditions in Python
 
 Boolean conditions are used to **ask questions** in your code: they return either `True` or `False`.
 
@@ -202,7 +271,6 @@ Boolean conditions are used to **ask questions** in your code: they return eithe
 - `!=` → not equal  
 - `<`, `>`, `<=`, `>=` → less/greater than (or equal)  
 
-### Example: Number check
 ```{pyodide}
 x = 10
 print(x > 5)     # True
@@ -211,14 +279,12 @@ print(x != 7)    # True
 print(x < 3)     # False
 ```
 
----
 
 ## Combine conditions using:
 - `and`: both must be True  
 - `or`: at least one must be True  
 - `not`: negates the condition  
 
-### Example: Combining conditions
 ```{pyodide}
 age = 20
 has_id = True
@@ -227,7 +293,7 @@ print(age >= 18 and has_id)
 print(age < 18 or not has_id)
 ```
 
-## 🔀 The `if` Statement
+## The `if` Statement
 
 The `if` statement allows your program to **make decisions** based on conditions.
 
@@ -235,7 +301,6 @@ The `if` statement allows your program to **make decisions** based on conditions
 - Can include `elif` (else-if) and `else` branches
 - Python uses indentation to define the blocks
 
-### ✅ Syntax
 ```python
 if condition:
     # do something
@@ -245,7 +310,7 @@ else:
     # fallback
 ```
 
-## 🔀 The `if` Example
+## The `if` Example
 
 ```{pyodide}
 age = 18
@@ -256,24 +321,30 @@ else:
     print("Sorry, too young.")
 ```
 
-## 🔁 The `for` Loop
+## The `for` Loop
 
 The `for` loop lets you **repeat a block of code** for each item in a sequence.
 
 - Commonly used to loop over lists, strings, or ranges
 - Automatically stops when the sequence ends
 
-### ✅ Syntax
 ```python
 for item in sequence:
     # do something with item
 ```
 
 ## Example: Looping over a list
+A list in Python is an ordered collection of items (like numbers, strings or any objects) that can be changed, added to, or removed; written with square brackets `[]`. (see Course 2)
+
 ```{pyodide}
 fruits = ["apple", "banana", "cherry"]
 
 for fruit in fruits:
+    print("I like", fruit)
+
+# If you need the index too
+for i, fruit in enumerate(fruits):
+    print("Fruit number", i)
     print("I like", fruit)
 ```
 
@@ -296,14 +367,13 @@ for i in range(10):
       break
 ```
 
-## 🔄 The `while` Loop
+## The `while` Loop
 
 A `while` loop repeats a block of code **as long as a condition is `True`**.
 
 - Good for loops where you **don’t know in advance how many times to repeat**
 - The condition is checked **before** each loop
 
-### Syntax
 ```python
 while condition:
     # code to repeat
@@ -324,48 +394,62 @@ while True:
     break
 ```
 
-
-## 🖨️ `print()` and `input()` in Python
-
-These are basic but powerful tools for **interacting with the user**.
-
-`print()`: Display output
-
-`input()`: Get user input
-
-Used to **ask the user for information**. Always returns a **string**.
-
-## Example
-
-```{.python}
-user_name = input("What is your name? ")
-print("Nice to meet you,", user_name)
-```
-
-### ⚠️ Reminder:
-If you need a number from `input()`, use `int()` or `float()`:
-
-```{.python}
-age = int(input("Enter your age: "))
-print("In 5 years, you’ll be", age + 5)
-```
-
 ## Your turn!
 
-### 📋 Instructions
+### Instructions
 Write a Python program that:
 
-1. Greets the user using their name (input() + print())
+1. Greets the user using their name (`input()` + `print()`)
 
-2. Asks 3 multiple-choice questions
+2. Asks 3 multiple-choice questions (list of questions + list of answers)
 
-3. Uses if statements to check answers
+3. Uses if statements to check answers (use object method to make it UPPER or lower case and then compare to the right answer)
 
-4. Uses a for or while loop to ask questions one by one
+4. Uses a for or while loop to ask questions one by one (and `input()` + `print()`)
 
-5. Keeps track of the score using a variable
+5. Keeps track of the score using a variable and `if-else` statements to increment the score. 
 
-6. Prints the final score and a custom message (e.g., "Well done!" or "Try again")
+6. Prints the final score and a custom message
+
+
+## Solution
+
+```{pyodide}
+print("Welcome to the Python Quiz!")
+
+name = input("What's your name? ")
+print("Hi", name + "!", "Let's begin.\n")
+
+score = 0
+
+questions = [
+    "What is 2 + 2?",
+    "What is the capital of France?",
+    "What returns \"python\".upper() do in Python?"
+]
+
+answers = [
+    "4",
+    "paris",
+    "PYTHON"
+]
+
+for i, q in enumerate(questions):
+    answer = input(q + " ").lower()
+    if answers[i].lower() == answer.lower():
+        print("Correct!\n")
+        score += 1
+    else:
+        print("Wrong!\n")
+
+print("You got", score, "out of", len(questions))
+if score == 3:
+    print("Perfect score! Great job,", name.upper() + "!")
+elif score > 0:
+    print("Not bad! Try again to improve.")
+else:
+    print("Keep practicing!")
+```
 
 
 
