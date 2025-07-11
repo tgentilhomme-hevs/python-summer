@@ -396,7 +396,6 @@ while True:
 
 ## Your turn!
 
-### Instructions
 Write a Python program that:
 
 1. Greets the user using their name (`input()` + `print()`)
