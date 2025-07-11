@@ -564,9 +564,13 @@ Define a class with attributes: name, age, grades, and methods to:
 
 - Display infos (whatever you want to print)
 
----
+ ## More references
 
-### Solution
+[Python course for data analysis](https://github.com/jbossios/python-tutorial/tree/c2db1696439b23c0e4c02eff680bf61e45caab7e?tab=readme-ov-file)
+
+[The Python tutorial](https://docs.python.org/3/tutorial/)
+
+## Solution
 ```{pyodide}
 class Student:
     def __init__(self, name, age, grades=None):

@@ -443,6 +443,12 @@ You're working with sensor data collected in a lab: each row represents a differ
 4. Subtract mean from each row (sensor), using broadcasting
 5. Simulate a new column of sensor (i.e. use `randint` with correct shape) readings and concatenate it to the existing data.
 
+## More references
+
+[Python course for data analysis](https://github.com/jbossios/python-tutorial/tree/c2db1696439b23c0e4c02eff680bf61e45caab7e?tab=readme-ov-file)
+
+[Numpy](https://numpy.org/doc/stable/user/quickstart.html)
+
 ## Solution
 
 ```{pyodide}

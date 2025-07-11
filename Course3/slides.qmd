@@ -158,9 +158,13 @@ Objectives:
 - Open and parse the JSON file using `json.load()`
 - Check structure: list of colonies, each with conditions + growth
 
---- 
+ ## More references
 
-### Solution
+[Python course for data analysis](https://github.com/jbossios/python-tutorial/tree/c2db1696439b23c0e4c02eff680bf61e45caab7e?tab=readme-ov-file)
+
+[The Python tutorial](https://docs.python.org/3/tutorial/)
+
+## Solution
 ```python
 import json
 
