@@ -1,0 +1,418 @@
+---
+title: "Python Summer Course"
+subtitle: "Course 5: Pandas"
+format:
+  live-revealjs:
+    slide-number: true
+    brand: ../_brand.yml
+    theme: ../hevs.scss
+    show-slide-number: all
+    preview-links: auto
+    chalkboard: true
+    logo: https://www.hevs.ch/_nuxt/img/logo_hesso.9af1d79.svg
+    footer: "Pandas"
+resources:
+  - gene_expression_data.csv
+    
+execute:
+  echo: true       # ← this shows code
+  output: true     # ← this shows output
+  eval: true       # ← this runs the code
+---
+
+## Introduction
+
+Pandas is a Python library for **data analysis and manipulation**.
+
+It provides two main data structures:
+
+- **Series** → 1D labeled array
+- **DataFrame** → 2D labeled table (like Excel or a database)
+
+![Pandas](../img/pandas.png)
+
+---
+
+### 💡 Why Use Pandas?
+
+- Built on top of NumPy
+- Makes it easy to:
+  - Load and clean data
+  - Filter, transform, and group data
+  - Perform statistics and summaries
+- Works well with CSV, Excel, SQL, and more
+
+---
+
+### Example
+
+```{pyodide}
+import pandas as pd
+
+# A simple DataFrame example
+data = {
+    "Name": ["Alice", "Bob", "Charlie"],
+    "Age": [25, 30, 35],
+    "IsStudent": [True, False, False]
+}
+
+df = pd.DataFrame(data)
+print(df)
+```
+✅ Each **key** becomes a column name  
+✅ Each **value** must be a list or array of the **same length**
+
+Pandas is the perfect tool for **data science**, **bioinformatics**, and any task involving **structured data**.
+
+
+## DataFrame = 2D Table
+A DataFrame is like a table with **rows and columns**.
+
+```{pyodide}
+import pandas as pd
+
+data = {
+    "Name": ["Alice", "Bob", "Charlie"],
+    "Age": [25, 30, 35]
+}
+
+df = pd.DataFrame(data)
+print(df)
+```
+
+- Rows are automatically indexed (0, 1, 2...)
+- Columns are labeled (like a dict of Series)
+
+---
+
+## Series = 1D Column or Row
+
+A Series is like a **single column** with an index:
+
+```{pyodide}
+# Column access
+ages = df["Age"]
+print(ages)
+```
+
+- Has both values **and** an index
+- Acts like a NumPy array + labels
+
+
+## Access by Label `.loc[row_label, column_label]`
+You can access specific element of the table using row/column label with `.loc[]`.
+
+```{pyodide}
+# Access one element
+print(df.loc[0, "Age"])    # Age of Alice
+```
+
+---
+
+### Modify an element 
+```{pyodide}
+df.loc[2, "Age"] = 31
+print(df)
+```
+
+---
+
+### Row/column access
+```{pyodide}
+print(df.loc[1])        # Entire row (Series)
+print(df.loc[:, "Name"])  # Entire column (Series)
+```
+
+
+
+## Access by Index `.iloc[row_index, column_index]`
+```{pyodide}
+print(df.iloc[0, 1])       # Same as above (row 0, column 1)
+```
+
+Same as `.loc[]` but with indexes
+
+```{pyodide}
+# Slicing
+print(df.iloc[0:2, 0:2])  # First 2 rows and 2 columns
+
+# Can be done with .loc[] too
+```
+
+## Add a Column / Filter Rows
+
+You can add columns just like a dictionnary
+```{pyodide}
+df["HES"] = [True, False, False]
+```
+
+## Filter with conditions (Boolean mask)
+
+You can filter the row using boolean mask with the same lenght as the columns.
+
+Usually, you filter using value in one or several columns
+
+```{pyodide}
+print(df.loc[df["Age"] > 30])  # Rows where Age > 30
+
+# Combine conditions with `&` (and) `|` (or)
+```
+
+## Loading CSV and Excel Files
+
+Pandas makes it easy to import real-world data from common formats.
+
+This is usually what your are going to do.
+
+Examples for CSV and Excel files
+
+---
+
+### Loading files
+```python
+import pandas as pd
+# Load a CSV file from a URL or local path
+df = pd.read_csv("my_data.csv")  # or from a URL
+print(df.head())  # Show first 5 rows
+```
+
+- Use `sep=";"` if using semicolon separator
+- Use `encoding="utf-8"` if needed
+- Can use a column as row indexes `index_col="thisCol"`
+
+```python
+# Load an Excel File
+df = pd.read_excel("my_data.xlsx", sheet_name="Sheet1")
+```
+
+
+## Compute Stats and Explore Data
+
+Pandas offers many built-in tools to summarize and analyze your data quickly.
+
+```{pyodide}
+import pandas as pd
+
+df = pd.DataFrame({
+    "Age": [25, 30, 35, 28],
+    "Score": [80, 90, 88, 75],
+    "Something": ["A", "B", "C", "D"]
+})
+```
+---
+
+### Quick Exploration
+
+```{pyodide}
+print(df.head())     # First 5 rows
+print(df.tail(2))    # Last 2 rows
+print(df.columns)    # List of column names
+print(df.index)      # Row index
+```
+---
+
+### Basic Statistics
+
+```{pyodide}
+print(df.mean())     # Column-wise average
+print(df["Age"].max())  # Max value in a column
+```
+
+---
+
+### Data Overview
+
+```{pyodide}
+print(df.info())     # Structure and types
+print(df.describe()) # Summary stats for numeric columns
+```
+
+## Handling Missing Values in Pandas
+
+Missing values are common in real-world data. Pandas uses `NaN` (Not a Number) to represent them.
+
+
+```{pyodide}
+import pandas as pd
+import numpy as np
+
+df = pd.DataFrame({
+    "Name": ["Alice", "Bob", "Charlie"],
+    "Age": [25, np.nan, 35]
+})
+
+### Detect Missing Data
+print(df.isna())       # True where values are missing
+print(df.isna().sum()) # Count missing per column
+```
+
+---
+
+### Drop or Fill
+
+```{pyodide}
+df.dropna()            # Remove rows with missing values
+df.fillna(0)           # Replace missing with 0
+df["Age"].fillna(df["Age"].mean(), inplace=True)  # Replace with column mean
+```
+
+## Simple Plots with Pandas
+
+Pandas makes it easy to plot data directly from a DataFrame.
+
+It uses [Matplotlib](https://matplotlib.org/stable/users/explain/quick_start.html#quick-start), which is a Python library commuly used for plots.
+
+You can customize the plots using Matplolib functionalities.
+
+----
+
+### Line Plot
+
+
+```{pyodide}
+# You do not need this code: just for the presentation
+import micropip
+await micropip.install("matplotlib")  # One-time install
+```
+
+
+```{pyodide}
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame({
+    "Year": [2020, 2021, 2022, 2023],
+    "Revenue": [100, 150, 200, 250]
+})
+
+df.plot(x="Year", y="Revenue", kind="line", title="Revenue Over Time")
+
+# Call pyplot show
+plt.show() # You normally do need this (only for the presentation)
+```
+
+---
+
+### Other Plot Types
+
+```{pyodide}
+df.plot(kind="bar")        # Bar chart
+plt.show()
+```
+```{pyodide}
+df.plot(kind="hist")       # Histogram
+plt.show()
+```
+```{pyodide}
+df.plot(kind="box")        # Boxplot
+plt.show()
+```
+```{pyodide}
+df.plot(kind="scatter", x="Year", y="Revenue")  # Scatter plot
+plt.show()
+```
+
+## And many more to cover on Pandas!
+
+- `group_by()`
+- Time series
+- interpolation
+- ...
+
+## Your turn!
+
+You are given a dataset `gene_expression_data.cvs`. There is no descriptions, but you need to explore and make some analyses.
+
+1. Load the file using Pandas
+2. Explore it using the functions seen in this course
+3. Check how many treated vs healthy samples there are using `value_counts()` on the column or using boolean condition
+
+---
+
+4. Compute the mean expression for `Tissue_B` (optional: all tissues)
+5. Calculate the difference between Tissue A and B and store it in a new column
+6. Filter the genes where Tissue C expression is greater than 9 and Biomarker is True (i.e. two boolean expression combined with `&`)
+
+---
+
+7. Plot a scatter plot of Tissue A vs Tissue B, colored with biomarker.
+Tip: use `scatter` with
+```
+colors = ["red" if b else "blue" for b in df["Biomarker"]]
+```
+
+## More references
+
+[Python course for data analysis](https://github.com/jbossios/python-tutorial/tree/c2db1696439b23c0e4c02eff680bf61e45caab7e?tab=readme-ov-file)
+
+[PANDAS-TUTORIAL](https://github.com/TirendazAcademy/PANDAS-TUTORIAL)
+
+[Pandas](https://pandas.pydata.org/docs/getting_started/index.html)
+
+## Solution
+
+---
+
+### 1. Load the CSV
+```{pyodide}
+import pandas as pd
+
+df = pd.read_csv("gene_expression_data.csv")
+```
+
+---
+
+### 2. Explore the Data
+```{pyodide}
+print(df.info())
+print(df.describe())
+print(df.head())
+print(df.columns)
+print(df.shape)
+```
+
+---
+
+### 3. Count Conditions
+```{pyodide}
+print(df["Condition"].value_counts())
+# OR using boolean:
+print((df["Condition"] == "Treated").sum())
+```
+
+---
+
+### 4. Mean Expression per Tissue
+```{pyodide}
+tissue_cols = [col for col in df.columns if "Tissue" in col]
+print(df[tissue_cols].mean())
+```
+
+---
+
+### 5. Add Difference Column (Tissue A – B)
+```{pyodide}
+df["Diff_AB"] = df["Tissue_A"] - df["Tissue_B"]
+print(df[["Gene", "Diff_AB"]].head())
+```
+
+---
+
+### 6. Filter: Tissue C > 9 and Biomarker = True
+```{pyodide}
+filtered = df[(df["Tissue_C"] > 9) & (df["Biomarker"] == True)]
+print(filtered)
+```
+
+---
+
+### 7. Scatter Plot (Tissue A vs B, colored by Biomarker)
+```{pyodide}
+import matplotlib.pyplot as plt
+
+colors = df["Biomarker"].map({True: "red", False: "blue"})
+
+df.plot.scatter(x="Tissue_A", y="Tissue_B", c=colors)
+plt.title("Tissue A vs B (Biomarker Color)")
+plt.show()
+```
