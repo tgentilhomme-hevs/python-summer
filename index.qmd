@@ -15,3 +15,12 @@ Learning Python basics for data analytics
 -	Lab-based courses on Colab
 -	5 courses of 1.5 hours: should attend the 5 sessions
 -	Self-learning: point to videos and/or tutorials (notebooks) covering topics seen in the courses, going a bit further, or introducing concepts of the following course
+
+## Resources
+
+[Colab](https://colab.google/notebooks/)
+
+[The Python Tutorial](https://docs.python.org/3/tutorial/)
+[Python For Beginners](https://github.com/Python-Crash-Course/Python101/tree/master?tab=readme-ov-file)
+[Python, Jupyter, Numpy](https://nustat.github.io/DataScience_Intro_python/Introduction%20to%20Python%20and%20Jupyter%20Notebooks.html)
+[Python course for data analysis](https://github.com/jbossios/python-tutorial/tree/master)
