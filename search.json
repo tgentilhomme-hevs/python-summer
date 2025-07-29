@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Coursetitle",
+    "title": "Python Summer",
     "section": "",
     "text": "Useful info\nThis course introduces fundamentals of programming using Python.",
     "crumbs": [
@@ -16,7 +16,7 @@
     "section": "",
     "text": "👨🏻‍🏫 Slides Slides PDF",
     "crumbs": [
-      "First Part",
+      "Course 1: Python Basics & Objects",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Week description</span>"
     ]
   },
@@ -27,8 +27,41 @@
     "section": "",
     "text": "👨🏻‍🏫 Slides Slides PDF",
     "crumbs": [
-      "Second Part",
+      "Course 2: Functions, Lists, Dictionaries & Classes",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Week title</span>"
+    ]
+  },
+  {
+    "objectID": "Course3/index.html",
+    "href": "Course3/index.html",
+    "title": "3  Week title",
+    "section": "",
+    "text": "👨🏻‍🏫 Slides Slides PDF",
+    "crumbs": [
+      "Course 3: Files, Data & Practice",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week title</span>"
+    ]
+  },
+  {
+    "objectID": "Course4/index.html",
+    "href": "Course4/index.html",
+    "title": "4  Week title",
+    "section": "",
+    "text": "👨🏻‍🏫 Slides Slides PDF",
+    "crumbs": [
+      "Course 4: Numpy",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Week title</span>"
+    ]
+  },
+  {
+    "objectID": "Course5/index.html",
+    "href": "Course5/index.html",
+    "title": "5  Week title",
+    "section": "",
+    "text": "👨🏻‍🏫 Slides Slides PDF",
+    "crumbs": [
+      "Course 5: Pandas",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Week title</span>"
     ]
   }
 ]
