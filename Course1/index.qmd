@@ -14,7 +14,7 @@
 - Object methods like .upper() on strings
 
 
-# Content
+## Content
 
 [👨🏻‍🏫 Slides]({{< var base_url>}}slides/Course1/slides.html){.btn .btn-outline-primary .btn role="button"} 
 [Slides PDF]({{< var base_url>}}slides/Course1/slides.pdf){.btn .btn-outline-secondary .btn role="button"} 
