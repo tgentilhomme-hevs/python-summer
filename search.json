@@ -32,177 +32,161 @@
   {
     "objectID": "Course1/index.html",
     "href": "Course1/index.html",
-    "title": "1  Description",
+    "title": "1  Python Basics & Objects",
     "section": "",
     "text": "Objectives",
     "crumbs": [
-      "Course 1: Python Basics & Objects",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Description</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Python Basics & Objects</span>"
     ]
   },
   {
     "objectID": "Course1/index.html#objectives",
     "href": "Course1/index.html#objectives",
-    "title": "1  Description",
+    "title": "1  Python Basics & Objects",
     "section": "",
     "text": "Introduction to Google Colab\nHow to write simple Python code\nUse variables, numbers, text, conditions, and loops\nUnderstand that everything in Python is an “object”",
     "crumbs": [
-      "Course 1: Python Basics & Objects",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Description</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Python Basics & Objects</span>"
     ]
   },
   {
     "objectID": "Course1/index.html#topics",
     "href": "Course1/index.html#topics",
-    "title": "1  Description",
+    "title": "1  Python Basics & Objects",
     "section": "Topics",
     "text": "Topics\n\nNumbers, strings, booleans\nVariables, Operators\nif, else, for, while\nprint() and input()\nObject methods like .upper() on strings",
     "crumbs": [
-      "Course 1: Python Basics & Objects",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Description</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Python Basics & Objects</span>"
     ]
   },
   {
     "objectID": "Course2/index.html",
     "href": "Course2/index.html",
-    "title": "2  Description",
+    "title": "2  Functions, Lists, Dictionaries & Classes",
     "section": "",
     "text": "Objectives",
     "crumbs": [
-      "Course 2: Functions, Lists, Dictionaries & Classes",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Description</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Functions, Lists, Dictionaries & Classes</span>"
     ]
   },
   {
     "objectID": "Course2/index.html#objectives",
     "href": "Course2/index.html#objectives",
-    "title": "2  Description",
+    "title": "2  Functions, Lists, Dictionaries & Classes",
     "section": "",
     "text": "Write code with fonctions\nUnderstand and manipulate lists and dictionaries\nUnderstand what a class is and implement a simple class",
     "crumbs": [
-      "Course 2: Functions, Lists, Dictionaries & Classes",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Description</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Functions, Lists, Dictionaries & Classes</span>"
     ]
   },
   {
     "objectID": "Course2/index.html#topics",
     "href": "Course2/index.html#topics",
-    "title": "2  Description",
+    "title": "2  Functions, Lists, Dictionaries & Classes",
     "section": "Topics",
     "text": "Topics\n\ndefine functions\nLists and their methods\nDictionaries (key-value pairs)\nClasses: init, self, attributes, and methods",
     "crumbs": [
-      "Course 2: Functions, Lists, Dictionaries & Classes",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Description</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Functions, Lists, Dictionaries & Classes</span>"
     ]
   },
   {
     "objectID": "Course2/index.html#content",
     "href": "Course2/index.html#content",
-    "title": "2  Description",
+    "title": "2  Functions, Lists, Dictionaries & Classes",
     "section": "Content",
     "text": "Content\n👨🏻‍🏫 Slides Slides PDF",
     "crumbs": [
-      "Course 2: Functions, Lists, Dictionaries & Classes",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Description</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Functions, Lists, Dictionaries & Classes</span>"
     ]
   },
   {
     "objectID": "Course3/index.html",
     "href": "Course3/index.html",
-    "title": "3  Description",
+    "title": "3  Files, Data & Practice",
     "section": "",
     "text": "Objectives",
     "crumbs": [
-      "Course 3: Files, Data & Practice",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Description</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Files, Data & Practice</span>"
     ]
   },
   {
     "objectID": "Course3/index.html#objectives",
     "href": "Course3/index.html#objectives",
-    "title": "3  Description",
+    "title": "3  Files, Data & Practice",
     "section": "",
     "text": "Install/Import packages\nRead and write files\nWork with json data (like spreadsheets)\nPractice previous concepts (functions, classes, dict, etc.) using data",
     "crumbs": [
-      "Course 3: Files, Data & Practice",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Description</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Files, Data & Practice</span>"
     ]
   },
   {
     "objectID": "Course3/index.html#topics",
     "href": "Course3/index.html#topics",
-    "title": "3  Description",
+    "title": "3  Files, Data & Practice",
     "section": "Topics",
     "text": "Topics\n\nOpening and reading files (.txt or .csv)\nLoad a JSON file into Python using the json module\nWork with lists of dictionaries as datasets\nPractice building objects from data, use object in lists, etc.",
     "crumbs": [
-      "Course 3: Files, Data & Practice",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Description</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Files, Data & Practice</span>"
     ]
   },
   {
     "objectID": "Course4/index.html",
     "href": "Course4/index.html",
-    "title": "4  Description",
+    "title": "4  Numpy",
     "section": "",
     "text": "Objectives",
     "crumbs": [
-      "Course 4: Numpy",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Description</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Numpy</span>"
     ]
   },
   {
     "objectID": "Course4/index.html#objectives",
     "href": "Course4/index.html#objectives",
-    "title": "4  Description",
+    "title": "4  Numpy",
     "section": "",
     "text": "Use numpy for working with numbers and tables of numbers\nDo fast math on arrays (instead of writing loops)\nIntroduction to indexing, broadcasting",
     "crumbs": [
-      "Course 4: Numpy",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Description</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Numpy</span>"
     ]
   },
   {
     "objectID": "Course4/index.html#topics",
     "href": "Course4/index.html#topics",
-    "title": "4  Description",
+    "title": "4  Numpy",
     "section": "Topics",
     "text": "Topics\n\nCreate arrays with numpy\nReshape and slice arrays\nDo stats with .mean(), .sum(), etc.\nWork along rows or columns (axis)\nIntro to broadcasting",
     "crumbs": [
-      "Course 4: Numpy",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Description</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Numpy</span>"
     ]
   },
   {
     "objectID": "Course5/index.html",
     "href": "Course5/index.html",
-    "title": "5  Description",
+    "title": "5  Pandas",
     "section": "",
     "text": "Objectives",
     "crumbs": [
-      "Course 5: Pandas",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Description</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Pandas</span>"
     ]
   },
   {
     "objectID": "Course5/index.html#objectives",
     "href": "Course5/index.html#objectives",
-    "title": "5  Description",
+    "title": "5  Pandas",
     "section": "",
     "text": "Use pandas to work with CSV data\nLoad, filter, group, and summarize data\nIntroduction of Matplotlib for visualization",
     "crumbs": [
-      "Course 5: Pandas",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Description</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Pandas</span>"
     ]
   },
   {
     "objectID": "Course5/index.html#topics",
     "href": "Course5/index.html#topics",
-    "title": "5  Description",
+    "title": "5  Pandas",
     "section": "Topics",
     "text": "Topics\n\nDataFrame and Series basics\nLoad CSV files\nFilter rows, select columns\nCompute stats\nHandle missing data\nSimple plots",
     "crumbs": [
-      "Course 5: Pandas",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Description</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Pandas</span>"
     ]
   }
 ]
