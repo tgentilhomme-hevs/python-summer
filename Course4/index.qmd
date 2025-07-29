@@ -1,4 +1,4 @@
-# Description
+# Numpy
 
 ## Objectives
 - Use numpy for working with numbers and tables of numbers

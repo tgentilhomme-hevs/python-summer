@@ -1,4 +1,4 @@
-# Description
+# Python Basics & Objects
 
 ## Objectives
 - Introduction to Google Colab 

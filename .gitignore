@@ -7,3 +7,5 @@ _slides/
 
 *:ZoneInfo.json
 *:Zone.Identifier
+
+/.quarto/
