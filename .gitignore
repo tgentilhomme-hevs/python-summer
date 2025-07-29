@@ -1,1 +1,8 @@
-/.quarto/
+/quarto/
+
+*.quarto_ipynb
+
+_slides/
+
+*:ZoneInfo.json
+*:Zone.Identifier
