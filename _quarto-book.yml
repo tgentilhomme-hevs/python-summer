@@ -7,15 +7,24 @@ number-depth: 1
 
 book:
   reader-mode: false
-  title: "Coursetitle"
+  title: "Python Summer"
   chapters:
     - index.qmd
-    - part: "First Part"
+    - part: "Course 1: Python Basics & Objects"
       chapters: 
        - Course1/index.qmd
-    - part: "Second Part"
+    - part: "Course 2: Functions, Lists, Dictionaries & Classes"
       chapters: 
        - Course2/index.qmd
+    - part: "Course 3: Files, Data & Practice"
+      chapters: 
+       - Course3/index.qmd
+    - part: "Course 4: Numpy"
+      chapters: 
+       - Course4/index.qmd
+    - part: "Course 5: Pandas"
+      chapters: 
+       - Course5/index.qmd
 
 format:
   live-html:
