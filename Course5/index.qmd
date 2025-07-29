@@ -14,7 +14,7 @@
 - Simple plots
 
 
-# Content
+## Content
 
 [👨🏻‍🏫 Slides]({{< var base_url>}}slides/Course5/slides.html){.btn .btn-outline-primary .btn role="button"} 
 [Slides PDF]({{< var base_url>}}slides/Course5/slides.pdf){.btn .btn-outline-secondary .btn role="button"} 
