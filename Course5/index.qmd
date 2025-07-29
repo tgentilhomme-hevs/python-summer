@@ -1,4 +1,20 @@
-# Week title
+# Description
+
+## Objectives
+- Use pandas to work with CSV data
+- Load, filter, group, and summarize data
+- Introduction of Matplotlib for visualization
+
+## Topics
+- DataFrame and Series basics
+- Load CSV files 
+- Filter rows, select columns
+- Compute stats
+- Handle missing data
+- Simple plots
+
+
+# Content
 
 [👨🏻‍🏫 Slides]({{< var base_url>}}slides/Course5/slides.html){.btn .btn-outline-primary .btn role="button"} 
 [Slides PDF]({{< var base_url>}}slides/Course5/slides.pdf){.btn .btn-outline-secondary .btn role="button"} 

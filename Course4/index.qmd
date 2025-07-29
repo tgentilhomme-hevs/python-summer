@@ -1,4 +1,18 @@
-# Week title
+# Description
+
+## Objectives
+- Use numpy for working with numbers and tables of numbers
+- Do fast math on arrays (instead of writing loops)
+- Introduction to indexing, broadcasting
+
+## Topics
+- Create arrays with numpy
+- Reshape and slice arrays
+- Do stats with .mean(), .sum(), etc.
+- Work along rows or columns (axis)
+- Intro to broadcasting
+
+# Content
 
 [👨🏻‍🏫 Slides]({{< var base_url>}}slides/Course4/slides.html){.btn .btn-outline-primary .btn role="button"} 
 [Slides PDF]({{< var base_url>}}slides/Course4/slides.pdf){.btn .btn-outline-secondary .btn role="button"} 

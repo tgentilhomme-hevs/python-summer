@@ -1,5 +1,20 @@
-# Week description
+# Description
 
+## Objectives
+- Introduction to Google Colab 
+- How to write simple Python code
+- Use variables, numbers, text, conditions, and loops
+- Understand that everything in Python is an "object"
+
+## Topics
+- Numbers, strings, booleans
+- Variables, Operators
+- if, else, for, while
+- print() and input()
+- Object methods like .upper() on strings
+
+
+# Content
 
 [👨🏻‍🏫 Slides]({{< var base_url>}}slides/Course1/slides.html){.btn .btn-outline-primary .btn role="button"} 
 [Slides PDF]({{< var base_url>}}slides/Course1/slides.pdf){.btn .btn-outline-secondary .btn role="button"} 

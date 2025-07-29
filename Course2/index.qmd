@@ -1,4 +1,18 @@
-# Week title
+# Description
+
+## Objectives
+- Write code with fonctions
+- Understand and manipulate lists and dictionaries
+- Understand what a class is and implement a simple class
+
+## Topics
+- define functions
+- Lists and their methods
+- Dictionaries (key-value pairs)
+- Classes: __init__, self, attributes, and methods
+
+
+## Content
 
 [👨🏻‍🏫 Slides]({{< var base_url>}}slides/Course2/slides.html){.btn .btn-outline-primary .btn role="button"} 
 [Slides PDF]({{< var base_url>}}slides/Course2/slides.pdf){.btn .btn-outline-secondary .btn role="button"} 
