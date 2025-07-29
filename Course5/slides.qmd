@@ -11,6 +11,7 @@ format:
     chalkboard: true
     logo: https://www.hevs.ch/_nuxt/img/logo_hesso.9af1d79.svg
     footer: "Pandas"
+    include-in-header: ../_includes/revealscript.html
 resources:
   - gene_expression_data.csv
     
@@ -341,28 +342,34 @@ Tip: use `scatter` with
 colors = ["red" if b else "blue" for b in df["Biomarker"]]
 ```
 
-## More references
-
-[Python course for data analysis](https://github.com/jbossios/python-tutorial/tree/c2db1696439b23c0e4c02eff680bf61e45caab7e?tab=readme-ov-file)
-
-[PANDAS-TUTORIAL](https://github.com/TirendazAcademy/PANDAS-TUTORIAL)
-
-[Pandas](https://pandas.pydata.org/docs/getting_started/index.html)
-
 ## Solution
 
 ---
 
 ### 1. Load the CSV
+
+<div class="reveal-solution-container" style="margin-top: 1em;">
+  <button onclick="revealSolution(this)" data-code="cheater">Show Solution</button>
+  <input type="text" class="solution-code" placeholder="Enter code" />
+  <div class="solution-content" style="display: none; margin-top: 0.5em;">
+
 ```{pyodide}
 import pandas as pd
 
 df = pd.read_csv("gene_expression_data.csv")
 ```
+  </div>
+</div>
 
 ---
 
 ### 2. Explore the Data
+
+<div class="reveal-solution-container" style="margin-top: 1em;">
+  <button onclick="revealSolution(this)" data-code="cheater">Show Solution</button>
+  <input type="text" class="solution-code" placeholder="Enter code" />
+  <div class="solution-content" style="display: none; margin-top: 0.5em;">
+
 ```{pyodide}
 print(df.info())
 print(df.describe())
@@ -370,43 +377,83 @@ print(df.head())
 print(df.columns)
 print(df.shape)
 ```
+  </div>
+</div>
 
 ---
 
 ### 3. Count Conditions
+
+<div class="reveal-solution-container" style="margin-top: 1em;">
+  <button onclick="revealSolution(this)" data-code="cheater">Show Solution</button>
+  <input type="text" class="solution-code" placeholder="Enter code" />
+  <div class="solution-content" style="display: none; margin-top: 0.5em;">
+
 ```{pyodide}
 print(df["Condition"].value_counts())
 # OR using boolean:
 print((df["Condition"] == "Treated").sum())
 ```
+  </div>
+</div>
 
 ---
 
 ### 4. Mean Expression per Tissue
+
+<div class="reveal-solution-container" style="margin-top: 1em;">
+  <button onclick="revealSolution(this)" data-code="cheater">Show Solution</button>
+  <input type="text" class="solution-code" placeholder="Enter code" />
+  <div class="solution-content" style="display: none; margin-top: 0.5em;">
+
 ```{pyodide}
 tissue_cols = [col for col in df.columns if "Tissue" in col]
 print(df[tissue_cols].mean())
 ```
+  </div>
+</div>
 
 ---
 
 ### 5. Add Difference Column (Tissue A – B)
+
+<div class="reveal-solution-container" style="margin-top: 1em;">
+  <button onclick="revealSolution(this)" data-code="cheater">Show Solution</button>
+  <input type="text" class="solution-code" placeholder="Enter code" />
+  <div class="solution-content" style="display: none; margin-top: 0.5em;">
+
 ```{pyodide}
 df["Diff_AB"] = df["Tissue_A"] - df["Tissue_B"]
 print(df[["Gene", "Diff_AB"]].head())
 ```
+  </div>
+</div>
 
 ---
 
 ### 6. Filter: Tissue C > 9 and Biomarker = True
+
+<div class="reveal-solution-container" style="margin-top: 1em;">
+  <button onclick="revealSolution(this)" data-code="cheater">Show Solution</button>
+  <input type="text" class="solution-code" placeholder="Enter code" />
+  <div class="solution-content" style="display: none; margin-top: 0.5em;">
+
 ```{pyodide}
 filtered = df[(df["Tissue_C"] > 9) & (df["Biomarker"] == True)]
 print(filtered)
 ```
+  </div>
+</div>
 
 ---
 
 ### 7. Scatter Plot (Tissue A vs B, colored by Biomarker)
+
+<div class="reveal-solution-container" style="margin-top: 1em;">
+  <button onclick="revealSolution(this)" data-code="cheater">Show Solution</button>
+  <input type="text" class="solution-code" placeholder="Enter code" />
+  <div class="solution-content" style="display: none; margin-top: 0.5em;">
+
 ```{pyodide}
 import matplotlib.pyplot as plt
 
@@ -416,3 +463,14 @@ df.plot.scatter(x="Tissue_A", y="Tissue_B", c=colors)
 plt.title("Tissue A vs B (Biomarker Color)")
 plt.show()
 ```
+  </div>
+</div>
+
+## More references
+
+[Python course for data analysis](https://github.com/jbossios/python-tutorial/tree/c2db1696439b23c0e4c02eff680bf61e45caab7e?tab=readme-ov-file)
+
+[PANDAS-TUTORIAL](https://github.com/TirendazAcademy/PANDAS-TUTORIAL)
+
+[Pandas](https://pandas.pydata.org/docs/getting_started/index.html)
+

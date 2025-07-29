@@ -1,0 +1,14 @@
+<script>
+function revealSolution(button) {
+  const container = button.closest(".reveal-solution-container");
+  const input = container.querySelector(".solution-code").value;
+  const content = container.querySelector(".solution-content");
+  const correctCode = button.getAttribute("data-code") || "cheater";
+
+  if (input === correctCode) {
+    content.style.display = "block";
+  } else {
+    alert("Wrong code!");
+  }
+}
+</script>

@@ -11,6 +11,7 @@ format:
     chalkboard: true
     logo: https://www.hevs.ch/_nuxt/img/logo_hesso.9af1d79.svg
     footer: "Python Basics & Objects"
+    include-in-header: ../_includes/revealscript.html
     
 execute:
   echo: true       # ← this shows code
@@ -404,19 +405,26 @@ Write a Python program that:
 
 3. Uses if statements to check answers (use object method to make it UPPER or lower case and then compare to the right answer)
 
+---
+
 4. Uses a for or while loop to ask questions one by one (and `input()` + `print()`)
 
 5. Keeps track of the score using a variable and `if-else` statements to increment the score. 
 
 6. Prints the final score and a custom message
 
- ## More references
+## More references
 
 [Python course for data analysis](https://github.com/jbossios/python-tutorial/tree/c2db1696439b23c0e4c02eff680bf61e45caab7e?tab=readme-ov-file)
 
 [The Python tutorial](https://docs.python.org/3/tutorial/)
 
 ## Solution
+
+<div class="reveal-solution-container" style="margin-top: 1em;">
+  <button onclick="revealSolution(this)" data-code="cheater">Show Solution</button>
+  <input type="text" class="solution-code" placeholder="Enter code" />
+  <div class="solution-content" style="display: none; margin-top: 0.5em;">
 
 ```{pyodide}
 print("Welcome to the Python Quiz!")
@@ -455,5 +463,6 @@ else:
     print("Keep practicing!")
 ```
 
-
+  </div>
+</div>
 

@@ -7,3 +7,10 @@ date: last-modified
 date-format: long
   
 bibliography: references.bib
+
+format:
+  revealjs:
+    include-in-header: _quarto/includes/revealscript.html
+
+
+

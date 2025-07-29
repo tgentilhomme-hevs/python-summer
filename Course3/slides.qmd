@@ -11,6 +11,7 @@ format:
     chalkboard: true
     logo: https://www.hevs.ch/_nuxt/img/logo_hesso.9af1d79.svg
     footer: "Files, Data & Practice"
+    include-in-header: ../_includes/revealscript.html
     
 execute:
   echo: true       # ← this shows code
@@ -158,13 +159,13 @@ Objectives:
 - Open and parse the JSON file using `json.load()`
 - Check structure: list of colonies, each with conditions + growth
 
- ## More references
-
-[Python course for data analysis](https://github.com/jbossios/python-tutorial/tree/c2db1696439b23c0e4c02eff680bf61e45caab7e?tab=readme-ov-file)
-
-[The Python tutorial](https://docs.python.org/3/tutorial/)
-
 ## Solution
+
+<div class="reveal-solution-container" style="margin-top: 1em;">
+  <button onclick="revealSolution(this)" data-code="cheater">Show Solution</button>
+  <input type="text" class="solution-code" placeholder="Enter code" />
+  <div class="solution-content" style="display: none; margin-top: 0.5em;">
+
 ```python
 import json
 
@@ -173,6 +174,8 @@ with open("colonies.json", "r") as f:
 
 print(data[0].keys())
 ```
+  </div>
+</div>
 
 ## Step 2: Define a Colonie
 
@@ -186,15 +189,20 @@ Method
 - `math` package for exp, log functions
 
 Using formula:
-
-```latex
+$$
 G(t) = S \cdot e^{-\frac{(T - 37)^2}{20}} \cdot \left(1 - 0.3 \cdot \left| \text{pH} - 7 \right| \right) \cdot \ln(t + 1)
-```
+$$
 
-S: Sugar, T: temperature, pH: pH level, t: time (h)
+$S$: Sugar, $T$: temperature, $pH$: pH level, $t$: time (h)
+
 ---
 
 ### Solution
+
+<div class="reveal-solution-container" style="margin-top: 1em;">
+  <button onclick="revealSolution(this)" data-code="cheater">Show Solution</button>
+  <input type="text" class="solution-code" placeholder="Enter code" />
+  <div class="solution-content" style="display: none; margin-top: 0.5em;">
 
 ```python
 import math
@@ -211,6 +219,8 @@ class Colonie:
         ph_factor = 1 - abs(self.ph - 7) * 0.3
         return round(base * ph_factor * math.log(t + 1), 3)
 ```
+  </div>
+</div>
 
 ## Step 3: Create Objects and Compare Predictions
 
@@ -219,9 +229,13 @@ class Colonie:
 - Predict growth at fixed times (e.g. 3, 5, 8)
 - Compare with actual values in the dataset
 
----
 
-### Solution
+## Solution
+
+<div class="reveal-solution-container" style="margin-top: 1em;">
+  <button onclick="revealSolution(this)" data-code="cheater">Show Solution</button>
+  <input type="text" class="solution-code" placeholder="Enter code" />
+  <div class="solution-content" style="display: none; margin-top: 0.5em;">
 
 ```python
 fixed_times = [3, 5, 8]
@@ -236,8 +250,14 @@ for item in data:
         predicted = c.predict_growth(t)
         print(f"  t={t}h:  predicted={predicted}, actual={actual}")
 ```
+  </div>
+</div>
 
+## More references
 
+[Python course for data analysis](https://github.com/jbossios/python-tutorial/tree/c2db1696439b23c0e4c02eff680bf61e45caab7e?tab=readme-ov-file)
+
+[The Python tutorial](https://docs.python.org/3/tutorial/)
 
 
 

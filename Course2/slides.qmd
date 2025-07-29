@@ -11,6 +11,7 @@ format:
     chalkboard: true
     logo: https://www.hevs.ch/_nuxt/img/logo_hesso.9af1d79.svg
     footer: "Functions, Lists, Dictionaries & Classes"
+    include-in-header: ../_includes/revealscript.html
     
 execute:
   echo: true       # ← this shows code
@@ -512,6 +513,11 @@ Define student data: Create a list of students. Each student is a dictionary con
 
 ### Solution 
 
+<div class="reveal-solution-container" style="margin-top: 1em;">
+  <button onclick="revealSolution(this)" data-code="cheater">Show Solution</button>
+  <input type="text" class="solution-code" placeholder="Enter code" />
+  <div class="solution-content" style="display: none; margin-top: 0.5em;">
+
 ```{pyodide}
 students = [
     {
@@ -527,6 +533,9 @@ students = [
 ]
 ```
 
+  </div>
+</div>
+
 ---
 
 Write functions, taking your list of students, to:
@@ -538,6 +547,11 @@ Write functions, taking your list of students, to:
 ---
 
 ### Solution
+
+<div class="reveal-solution-container" style="margin-top: 1em;">
+  <button onclick="revealSolution(this)" data-code="cheater">Show Solution</button>
+  <input type="text" class="solution-code" placeholder="Enter code" />
+  <div class="solution-content" style="display: none; margin-top: 0.5em;">
 
 ```{pyodide}
 def get_all_names(students):
@@ -552,6 +566,9 @@ print(get_all_names(students=students))
 print(calculate_average(students[0]["grades"]))
 
 ```
+  </div>
+</div>
+
 ---
 
 ### Create a Student class
@@ -564,13 +581,14 @@ Define a class with attributes: name, age, grades, and methods to:
 
 - Display infos (whatever you want to print)
 
- ## More references
-
-[Python course for data analysis](https://github.com/jbossios/python-tutorial/tree/c2db1696439b23c0e4c02eff680bf61e45caab7e?tab=readme-ov-file)
-
-[The Python tutorial](https://docs.python.org/3/tutorial/)
 
 ## Solution
+
+<div class="reveal-solution-container" style="margin-top: 1em;">
+  <button onclick="revealSolution(this)" data-code="cheater">Show Solution</button>
+  <input type="text" class="solution-code" placeholder="Enter code" />
+  <div class="solution-content" style="display: none; margin-top: 0.5em;">
+
 ```{pyodide}
 class Student:
     def __init__(self, name, age, grades=None):
@@ -594,3 +612,11 @@ student.add_grade("sport", 85)
 print(student.infos())
 
 ```
+  </div>
+</div>
+
+## More references
+
+[Python course for data analysis](https://github.com/jbossios/python-tutorial/tree/c2db1696439b23c0e4c02eff680bf61e45caab7e?tab=readme-ov-file)
+
+[The Python tutorial](https://docs.python.org/3/tutorial/)
