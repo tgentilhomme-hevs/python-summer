@@ -192,6 +192,20 @@
       margin-right: 0; 
     }
   </style>
+  <script>
+  function revealSolution(button) {
+    const container = button.closest(".reveal-solution-container");
+    const input = container.querySelector(".solution-code").value;
+    const content = container.querySelector(".solution-content");
+    const correctCode = button.getAttribute("data-code") || "cheater";
+
+    if (input === correctCode) {
+      content.style.display = "block";
+    } else {
+      alert("Wrong code!");
+    }
+  }
+  </script>
   <script type="module" src="slides_files/libs/quarto-ojs/quarto-ojs-runtime.js"></script>
   <link href="slides_files/libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 </head>
@@ -368,18 +382,20 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoid2l0aCBvcGVuKFwiZGF0YS5q
 <li>Open and parse the JSON file using <code>json.load()</code></li>
 <li>Check structure: list of colonies, each with conditions + growth</li>
 </ul>
-<p>## More references</p>
-<p><a href="https://github.com/jbossios/python-tutorial/tree/c2db1696439b23c0e4c02eff680bf61e45caab7e?tab=readme-ov-file">Python course for data analysis</a></p>
-<p><a href="https://docs.python.org/3/tutorial/">The Python tutorial</a></p>
 </section>
 <section id="solution" class="slide level2">
 <h2>Solution</h2>
+<div class="reveal-solution-container" style="margin-top: 1em;">
+<button onclick="revealSolution(this)" data-code="cheater">Show Solution</button> <input type="text" class="solution-code" placeholder="Enter code">
+<div class="solution-content" style="display: none; margin-top: 0.5em;">
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="im">import</span> json</span>
 <span id="cb2-2"><a href=""></a></span>
 <span id="cb2-3"><a href=""></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"colonies.json"</span>, <span class="st">"r"</span>) <span class="im">as</span> f:</span>
 <span id="cb2-4"><a href=""></a>    data <span class="op">=</span> json.load(f)</span>
 <span id="cb2-5"><a href=""></a></span>
 <span id="cb2-6"><a href=""></a><span class="bu">print</span>(data[<span class="dv">0</span>].keys())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 </section>
 <section id="step-2-define-a-colonie" class="slide level2">
 <h2>Step 2: Define a Colonie</h2>
@@ -392,25 +408,32 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoid2l0aCBvcGVuKFwiZGF0YS5q
 <li><code>predict_growth(time)</code></li>
 <li><code>math</code> package for exp, log functions</li>
 </ul>
-<p>Using formula:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb3-1"><a href=""></a>G(t) = S <span class="fu">\cdot</span> e^{-<span class="fu">\frac</span>{(T - 37)^2}{20}} <span class="fu">\cdot</span> <span class="fu">\left</span>(1 - 0.3 <span class="fu">\cdot</span> <span class="fu">\left</span>| <span class="fu">\text</span>{pH} - 7 <span class="fu">\right</span>| <span class="fu">\right</span>) <span class="fu">\cdot</span> <span class="fu">\ln</span>(t + 1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Using formula: <span class="math display">\[
+G(t) = S \cdot e^{-\frac{(T - 37)^2}{20}} \cdot \left(1 - 0.3 \cdot \left| \text{pH} - 7 \right| \right) \cdot \ln(t + 1)
+\]</span></p>
+<p><span class="math inline">\(S\)</span>: Sugar, <span class="math inline">\(T\)</span>: temperature, <span class="math inline">\(pH\)</span>: pH level, <span class="math inline">\(t\)</span>: time (h)</p>
 </section>
-<section id="s-sugar-t-temperature-ph-ph-level-t-time-h" class="slide level2">
-<h2>S: Sugar, T: temperature, pH: pH level, t: time (h)</h2>
+<section class="slide level2">
+
 <h3 id="solution-1">Solution</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="im">import</span> math</span>
-<span id="cb4-2"><a href=""></a></span>
-<span id="cb4-3"><a href=""></a><span class="kw">class</span> Colonie:</span>
-<span id="cb4-4"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, temperature, ph, sugar):</span>
-<span id="cb4-5"><a href=""></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
-<span id="cb4-6"><a href=""></a>        <span class="va">self</span>.temperature <span class="op">=</span> temperature</span>
-<span id="cb4-7"><a href=""></a>        <span class="va">self</span>.ph <span class="op">=</span> ph</span>
-<span id="cb4-8"><a href=""></a>        <span class="va">self</span>.sugar <span class="op">=</span> sugar</span>
-<span id="cb4-9"><a href=""></a></span>
-<span id="cb4-10"><a href=""></a>    <span class="kw">def</span> predict_growth(<span class="va">self</span>, t):</span>
-<span id="cb4-11"><a href=""></a>        base <span class="op">=</span> <span class="va">self</span>.sugar <span class="op">*</span> math.exp(<span class="op">-</span>((<span class="va">self</span>.temperature <span class="op">-</span> <span class="dv">37</span>) <span class="op">**</span> <span class="dv">2</span>) <span class="op">/</span> <span class="dv">20</span>)</span>
-<span id="cb4-12"><a href=""></a>        ph_factor <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> <span class="bu">abs</span>(<span class="va">self</span>.ph <span class="op">-</span> <span class="dv">7</span>) <span class="op">*</span> <span class="fl">0.3</span></span>
-<span id="cb4-13"><a href=""></a>        <span class="cf">return</span> <span class="bu">round</span>(base <span class="op">*</span> ph_factor <span class="op">*</span> math.log(t <span class="op">+</span> <span class="dv">1</span>), <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="reveal-solution-container" style="margin-top: 1em;">
+<button onclick="revealSolution(this)" data-code="cheater">Show Solution</button> <input type="text" class="solution-code" placeholder="Enter code">
+<div class="solution-content" style="display: none; margin-top: 0.5em;">
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="im">import</span> math</span>
+<span id="cb3-2"><a href=""></a></span>
+<span id="cb3-3"><a href=""></a><span class="kw">class</span> Colonie:</span>
+<span id="cb3-4"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, temperature, ph, sugar):</span>
+<span id="cb3-5"><a href=""></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb3-6"><a href=""></a>        <span class="va">self</span>.temperature <span class="op">=</span> temperature</span>
+<span id="cb3-7"><a href=""></a>        <span class="va">self</span>.ph <span class="op">=</span> ph</span>
+<span id="cb3-8"><a href=""></a>        <span class="va">self</span>.sugar <span class="op">=</span> sugar</span>
+<span id="cb3-9"><a href=""></a></span>
+<span id="cb3-10"><a href=""></a>    <span class="kw">def</span> predict_growth(<span class="va">self</span>, t):</span>
+<span id="cb3-11"><a href=""></a>        base <span class="op">=</span> <span class="va">self</span>.sugar <span class="op">*</span> math.exp(<span class="op">-</span>((<span class="va">self</span>.temperature <span class="op">-</span> <span class="dv">37</span>) <span class="op">**</span> <span class="dv">2</span>) <span class="op">/</span> <span class="dv">20</span>)</span>
+<span id="cb3-12"><a href=""></a>        ph_factor <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> <span class="bu">abs</span>(<span class="va">self</span>.ph <span class="op">-</span> <span class="dv">7</span>) <span class="op">*</span> <span class="fl">0.3</span></span>
+<span id="cb3-13"><a href=""></a>        <span class="cf">return</span> <span class="bu">round</span>(base <span class="op">*</span> ph_factor <span class="op">*</span> math.log(t <span class="op">+</span> <span class="dv">1</span>), <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 </section>
 <section id="step-3-create-objects-and-compare-predictions" class="slide level2">
 <h2>Step 3: Create Objects and Compare Predictions</h2>
@@ -421,20 +444,29 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoid2l0aCBvcGVuKFwiZGF0YS5q
 <li>Compare with actual values in the dataset</li>
 </ul>
 </section>
-<section class="slide level2">
-
-<h3 id="solution-2">Solution</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a>fixed_times <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">8</span>]</span>
-<span id="cb5-2"><a href=""></a></span>
-<span id="cb5-3"><a href=""></a><span class="cf">for</span> item <span class="kw">in</span> data:</span>
-<span id="cb5-4"><a href=""></a>    cond <span class="op">=</span> item[<span class="st">"conditions"</span>]</span>
-<span id="cb5-5"><a href=""></a>    c <span class="op">=</span> Colonie(item[<span class="st">"name"</span>], cond[<span class="st">"temperature"</span>], cond[<span class="st">"ph"</span>], cond[<span class="st">"sugar"</span>])</span>
-<span id="cb5-6"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>c<span class="sc">.</span>name<span class="sc">}</span><span class="ss">:"</span>)</span>
-<span id="cb5-7"><a href=""></a></span>
-<span id="cb5-8"><a href=""></a>    <span class="cf">for</span> t <span class="kw">in</span> fixed_times:</span>
-<span id="cb5-9"><a href=""></a>        actual <span class="op">=</span> <span class="bu">float</span>(item[<span class="st">"growth"</span>][<span class="bu">str</span>(t)])</span>
-<span id="cb5-10"><a href=""></a>        predicted <span class="op">=</span> c.predict_growth(t)</span>
-<span id="cb5-11"><a href=""></a>        <span class="bu">print</span>(<span class="ss">f"  t=</span><span class="sc">{</span>t<span class="sc">}</span><span class="ss">h:  predicted=</span><span class="sc">{</span>predicted<span class="sc">}</span><span class="ss">, actual=</span><span class="sc">{</span>actual<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="solution-2" class="slide level2">
+<h2>Solution</h2>
+<div class="reveal-solution-container" style="margin-top: 1em;">
+<button onclick="revealSolution(this)" data-code="cheater">Show Solution</button> <input type="text" class="solution-code" placeholder="Enter code">
+<div class="solution-content" style="display: none; margin-top: 0.5em;">
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a>fixed_times <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">8</span>]</span>
+<span id="cb4-2"><a href=""></a></span>
+<span id="cb4-3"><a href=""></a><span class="cf">for</span> item <span class="kw">in</span> data:</span>
+<span id="cb4-4"><a href=""></a>    cond <span class="op">=</span> item[<span class="st">"conditions"</span>]</span>
+<span id="cb4-5"><a href=""></a>    c <span class="op">=</span> Colonie(item[<span class="st">"name"</span>], cond[<span class="st">"temperature"</span>], cond[<span class="st">"ph"</span>], cond[<span class="st">"sugar"</span>])</span>
+<span id="cb4-6"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>c<span class="sc">.</span>name<span class="sc">}</span><span class="ss">:"</span>)</span>
+<span id="cb4-7"><a href=""></a></span>
+<span id="cb4-8"><a href=""></a>    <span class="cf">for</span> t <span class="kw">in</span> fixed_times:</span>
+<span id="cb4-9"><a href=""></a>        actual <span class="op">=</span> <span class="bu">float</span>(item[<span class="st">"growth"</span>][<span class="bu">str</span>(t)])</span>
+<span id="cb4-10"><a href=""></a>        predicted <span class="op">=</span> c.predict_growth(t)</span>
+<span id="cb4-11"><a href=""></a>        <span class="bu">print</span>(<span class="ss">f"  t=</span><span class="sc">{</span>t<span class="sc">}</span><span class="ss">h:  predicted=</span><span class="sc">{</span>predicted<span class="sc">}</span><span class="ss">, actual=</span><span class="sc">{</span>actual<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="more-references" class="slide level2">
+<h2>More references</h2>
+<p><a href="https://github.com/jbossios/python-tutorial/tree/c2db1696439b23c0e4c02eff680bf61e45caab7e?tab=readme-ov-file">Python course for data analysis</a></p>
+<p><a href="https://docs.python.org/3/tutorial/">The Python tutorial</a></p>
 
 <script type="pyodide-data">
 eyJvcHRpb25zIjp7ImVudiI6eyJQTE9UTFlfUkVOREVSRVIiOiJwbG90bHlfbWltZXR5cGUifSwiaW5kZXhVUkwiOiJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvcHlvZGlkZS92MC4yNy4wL2Z1bGwvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsicHlvZGlkZV9odHRwIiwibWljcm9waXAiLCJpcHl0aG9uIl19fQ==

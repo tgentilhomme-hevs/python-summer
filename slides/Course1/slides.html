@@ -192,6 +192,20 @@
       margin-right: 0; 
     }
   </style>
+  <script>
+  function revealSolution(button) {
+    const container = button.closest(".reveal-solution-container");
+    const input = container.querySelector(".solution-code").value;
+    const content = container.querySelector(".solution-content");
+    const correctCode = button.getAttribute("data-code") || "cheater";
+
+    if (input === correctCode) {
+      content.style.display = "block";
+    } else {
+      alert("Wrong code!");
+    }
+  }
+  </script>
   <script type="module" src="slides_files/libs/quarto-ojs/quarto-ojs-runtime.js"></script>
   <link href="slides_files/libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 </head>
@@ -585,16 +599,26 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiY291bnQgPSAxXG5cbndoaWxl
 <li><p>Greets the user using their name (<code>input()</code> + <code>print()</code>)</p></li>
 <li><p>Asks 3 multiple-choice questions (list of questions + list of answers)</p></li>
 <li><p>Uses if statements to check answers (use object method to make it UPPER or lower case and then compare to the right answer)</p></li>
+</ol>
+</section>
+<section class="slide level2">
+
+<ol start="4" type="1">
 <li><p>Uses a for or while loop to ask questions one by one (and <code>input()</code> + <code>print()</code>)</p></li>
 <li><p>Keeps track of the score using a variable and <code>if-else</code> statements to increment the score.</p></li>
 <li><p>Prints the final score and a custom message</p></li>
 </ol>
-<p>## More references</p>
+</section>
+<section id="more-references" class="slide level2">
+<h2>More references</h2>
 <p><a href="https://github.com/jbossios/python-tutorial/tree/c2db1696439b23c0e4c02eff680bf61e45caab7e?tab=readme-ov-file">Python course for data analysis</a></p>
 <p><a href="https://docs.python.org/3/tutorial/">The Python tutorial</a></p>
 </section>
 <section id="solution" class="slide level2">
 <h2>Solution</h2>
+<div class="reveal-solution-container" style="margin-top: 1em;">
+<button onclick="revealSolution(this)" data-code="cheater">Show Solution</button> <input type="text" class="solution-code" placeholder="Enter code">
+<div class="solution-content" style="display: none; margin-top: 0.5em;">
 <div>
 <div id="pyodide-22" class="exercise-cell">
 
@@ -602,6 +626,8 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiY291bnQgPSAxXG5cbndoaWxl
 <script type="pyodide-22-contents">
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicHJpbnQoXCJXZWxjb21lIHRvIHRoZSBQeXRob24gUXVpeiFcIilcblxubmFtZSA9IGlucHV0KFwiV2hhdCdzIHlvdXIgbmFtZT8gXCIpXG5wcmludChcIkhpXCIsIG5hbWUgKyBcIiFcIiwgXCJMZXQncyBiZWdpbi5cXG5cIilcblxuc2NvcmUgPSAwXG5cbnF1ZXN0aW9ucyA9IFtcbiAgICBcIldoYXQgaXMgMiArIDI/XCIsXG4gICAgXCJXaGF0IGlzIHRoZSBjYXBpdGFsIG9mIEZyYW5jZT9cIixcbiAgICBcIldoYXQgcmV0dXJucyBcXFwicHl0aG9uXFxcIi51cHBlcigpIGRvIGluIFB5dGhvbj9cIlxuXVxuXG5hbnN3ZXJzID0gW1xuICAgIFwiNFwiLFxuICAgIFwicGFyaXNcIixcbiAgICBcIlBZVEhPTlwiXG5dXG5cbmZvciBpLCBxIGluIGVudW1lcmF0ZShxdWVzdGlvbnMpOlxuICAgIGFuc3dlciA9IGlucHV0KHEgKyBcIiBcIikubG93ZXIoKVxuICAgIGlmIGFuc3dlcnNbaV0ubG93ZXIoKSA9PSBhbnN3ZXIubG93ZXIoKTpcbiAgICAgICAgcHJpbnQoXCJDb3JyZWN0IVxcblwiKVxuICAgICAgICBzY29yZSArPSAxXG4gICAgZWxzZTpcbiAgICAgICAgcHJpbnQoXCJXcm9uZyFcXG5cIilcblxucHJpbnQoXCJZb3UgZ290XCIsIHNjb3JlLCBcIm91dCBvZlwiLCBsZW4ocXVlc3Rpb25zKSlcbmlmIHNjb3JlID09IDM6XG4gICAgcHJpbnQoXCJQZXJmZWN0IHNjb3JlISBHcmVhdCBqb2IsXCIsIG5hbWUudXBwZXIoKSArIFwiIVwiKVxuZWxpZiBzY29yZSA+IDA6XG4gICAgcHJpbnQoXCJOb3QgYmFkISBUcnkgYWdhaW4gdG8gaW1wcm92ZS5cIilcbmVsc2U6XG4gICAgcHJpbnQoXCJLZWVwIHByYWN0aWNpbmchXCIpIn0=
 </script>
+</div>
+</div>
 </div>
 
 <script type="pyodide-data">

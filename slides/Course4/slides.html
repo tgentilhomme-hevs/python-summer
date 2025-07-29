@@ -126,6 +126,20 @@
       margin-right: 0; 
     }
   </style>
+  <script>
+  function revealSolution(button) {
+    const container = button.closest(".reveal-solution-container");
+    const input = container.querySelector(".solution-code").value;
+    const content = container.querySelector(".solution-content");
+    const correctCode = button.getAttribute("data-code") || "cheater";
+
+    if (input === correctCode) {
+      content.style.display = "block";
+    } else {
+      alert("Wrong code!");
+    }
+  }
+  </script>
   <script type="module" src="slides_files/libs/quarto-ojs/quarto-ojs-runtime.js"></script>
   <link href="slides_files/libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 </head>
@@ -558,13 +572,11 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiY29scyA9IFsxLCAyXVxucHJp
 <li>Simulate a new column of sensor (i.e.&nbsp;use <code>randint</code> with correct shape) readings and concatenate it to the existing data.</li>
 </ol>
 </section>
-<section id="more-references" class="slide level2">
-<h2>More references</h2>
-<p><a href="https://github.com/jbossios/python-tutorial/tree/c2db1696439b23c0e4c02eff680bf61e45caab7e?tab=readme-ov-file">Python course for data analysis</a></p>
-<p><a href="https://numpy.org/doc/stable/user/quickstart.html">Numpy</a></p>
-</section>
 <section id="solution" class="slide level2">
 <h2>Solution</h2>
+<div class="reveal-solution-container" style="margin-top: 1em;">
+<button onclick="revealSolution(this)" data-code="cheater">Show Solution</button> <input type="text" class="solution-code" placeholder="Enter code">
+<div class="solution-content" style="display: none; margin-top: 0.5em;">
 <div>
 <div id="pyodide-28" class="exercise-cell">
 
@@ -573,6 +585,13 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiY29scyA9IFsxLCAyXVxucHJp
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiXG5pbXBvcnQgbnVtcHkgYXMgbnBcblxuIyBTaW11bGF0ZSAxMCBzZW5zb3JzIG92ZXIgNiB0aW1lcG9pbnRzICh2YWx1ZXMgZnJvbSAwIHRvIDEwMClcblxucHJpbnQoXCJTdGVwIDFcIilcbmRhdGEgPSBucC5yYW5kb20ucmFuZGludCgwLCAxMDEsIHNpemU9KDEwLCA2KSlcbnByaW50KGRhdGEpXG5wcmludChcIi0tLS0tLS0tLS0tLS0tLS0tXCIpXG5cbiMgU3RhdGlzdGljc1xuXG5wcmludChcIlN0ZXAgMlwiKVxubWVhbl9wZXJfc2Vuc29yID0gZGF0YS5tZWFuKGF4aXM9MSlcbnByaW50KG1lYW5fcGVyX3NlbnNvcilcbnByaW50KGRhdGEubWF4KGF4aXM9MSkpXG5wcmludChkYXRhLmFyZ21heChheGlzPTEpKVxucHJpbnQoXCItLS0tLS0tLS0tLS0tLS0tLVwiKVxuXG4jIE1hc2sgYW5kIGZpbHRlclxucHJpbnQoXCJTdGVwIDNcIilcbm1hc2sgPSBtZWFuX3Blcl9zZW5zb3IgPiA2MFxucHJpbnQoZGF0YVttYXNrXSlcbnByaW50KFwiLS0tLS0tLS0tLS0tLS0tLS1cIilcblxuIyBTdWJ0cmFjdCBtZWFuIGZyb20gZWFjaCByb3cgKHNlbnNvciksIHVzaW5nIGJyb2FkY2FzdGluZ1xucHJpbnQoXCJTdGVwIDRcIilcbm5vcm1hbGl6ZWQgPSBkYXRhIC0gZGF0YS5tZWFuKGF4aXM9MSwga2VlcGRpbXM9VHJ1ZSlcbiMgb3IgXG5ub3JtYWxpemVkID0gZGF0YSAtIG1lYW5fcGVyX3NlbnNvci5yZXNoYXBlKCgtMSwgMSkpXG5wcmludChub3JtYWxpemVkKVxucHJpbnQoXCItLS0tLS0tLS0tLS0tLS0tLVwiKVxuXG4jIEFkZCBkYXRhXG5wcmludChcIlN0ZXAgNVwiKVxubmV3X3RpbWVwb2ludCA9IG5wLnJhbmRvbS5yYW5kaW50KDAsIDEwMSwgc2l6ZT0oMTAsIDEpKVxuZGF0YSA9IG5wLmNvbmNhdGVuYXRlKChkYXRhLCBuZXdfdGltZXBvaW50KSwgYXhpcz0xKVxucHJpbnQoXCItLS0tLS0tLS0tLS0tLS0tLVwiKSJ9
 </script>
 </div>
+</div>
+</div>
+</section>
+<section id="more-references" class="slide level2">
+<h2>More references</h2>
+<p><a href="https://github.com/jbossios/python-tutorial/tree/c2db1696439b23c0e4c02eff680bf61e45caab7e?tab=readme-ov-file">Python course for data analysis</a></p>
+<p><a href="https://numpy.org/doc/stable/user/quickstart.html">Numpy</a></p>
 
 <script type="pyodide-data">
 eyJvcHRpb25zIjp7ImVudiI6eyJQTE9UTFlfUkVOREVSRVIiOiJwbG90bHlfbWltZXR5cGUifSwiaW5kZXhVUkwiOiJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvcHlvZGlkZS92MC4yNy4wL2Z1bGwvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsicHlvZGlkZV9odHRwIiwibWljcm9waXAiLCJpcHl0aG9uIl19fQ==

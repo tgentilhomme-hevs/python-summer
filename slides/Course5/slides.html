@@ -192,6 +192,20 @@
       margin-right: 0; 
     }
   </style>
+  <script>
+  function revealSolution(button) {
+    const container = button.closest(".reveal-solution-container");
+    const input = container.querySelector(".solution-code").value;
+    const content = container.querySelector(".solution-content");
+    const correctCode = button.getAttribute("data-code") || "cheater";
+
+    if (input === correctCode) {
+      content.style.display = "block";
+    } else {
+      alert("Wrong code!");
+    }
+  }
+  </script>
   <script type="module" src="slides_files/libs/quarto-ojs/quarto-ojs-runtime.js"></script>
   <link href="slides_files/libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 </head>
@@ -553,18 +567,15 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGYucGxvdChraW5kPVwic2Nh
 </ol>
 <pre><code>colors = ["red" if b else "blue" for b in df["Biomarker"]]</code></pre>
 </section>
-<section id="more-references" class="slide level2">
-<h2>More references</h2>
-<p><a href="https://github.com/jbossios/python-tutorial/tree/c2db1696439b23c0e4c02eff680bf61e45caab7e?tab=readme-ov-file">Python course for data analysis</a></p>
-<p><a href="https://github.com/TirendazAcademy/PANDAS-TUTORIAL">PANDAS-TUTORIAL</a></p>
-<p><a href="https://pandas.pydata.org/docs/getting_started/index.html">Pandas</a></p>
-</section>
 <section id="solution" class="slide level2">
 <h2>Solution</h2>
 </section>
 <section class="slide level2">
 
 <h3 id="load-the-csv">1. Load the CSV</h3>
+<div class="reveal-solution-container" style="margin-top: 1em;">
+<button onclick="revealSolution(this)" data-code="cheater">Show Solution</button> <input type="text" class="solution-code" placeholder="Enter code">
+<div class="solution-content" style="display: none; margin-top: 0.5em;">
 <div>
 <div id="pyodide-23" class="exercise-cell">
 
@@ -573,10 +584,15 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGYucGxvdChraW5kPVwic2Nh
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBwZFxuXG5kZiA9IHBkLnJlYWRfY3N2KFwiZ2VuZV9leHByZXNzaW9uX2RhdGEuY3N2XCIpIn0=
 </script>
 </div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
 <h3 id="explore-the-data">2. Explore the Data</h3>
+<div class="reveal-solution-container" style="margin-top: 1em;">
+<button onclick="revealSolution(this)" data-code="cheater">Show Solution</button> <input type="text" class="solution-code" placeholder="Enter code">
+<div class="solution-content" style="display: none; margin-top: 0.5em;">
 <div>
 <div id="pyodide-24" class="exercise-cell">
 
@@ -585,10 +601,15 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBw
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicHJpbnQoZGYuaW5mbygpKVxucHJpbnQoZGYuZGVzY3JpYmUoKSlcbnByaW50KGRmLmhlYWQoKSlcbnByaW50KGRmLmNvbHVtbnMpXG5wcmludChkZi5zaGFwZSkifQ==
 </script>
 </div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
 <h3 id="count-conditions">3. Count Conditions</h3>
+<div class="reveal-solution-container" style="margin-top: 1em;">
+<button onclick="revealSolution(this)" data-code="cheater">Show Solution</button> <input type="text" class="solution-code" placeholder="Enter code">
+<div class="solution-content" style="display: none; margin-top: 0.5em;">
 <div>
 <div id="pyodide-25" class="exercise-cell">
 
@@ -597,10 +618,15 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicHJpbnQoZGYuaW5mbygpKVxu
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicHJpbnQoZGZbXCJDb25kaXRpb25cIl0udmFsdWVfY291bnRzKCkpXG4jIE9SIHVzaW5nIGJvb2xlYW46XG5wcmludCgoZGZbXCJDb25kaXRpb25cIl0gPT0gXCJUcmVhdGVkXCIpLnN1bSgpKSJ9
 </script>
 </div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
 <h3 id="mean-expression-per-tissue">4. Mean Expression per Tissue</h3>
+<div class="reveal-solution-container" style="margin-top: 1em;">
+<button onclick="revealSolution(this)" data-code="cheater">Show Solution</button> <input type="text" class="solution-code" placeholder="Enter code">
+<div class="solution-content" style="display: none; margin-top: 0.5em;">
 <div>
 <div id="pyodide-26" class="exercise-cell">
 
@@ -609,10 +635,15 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicHJpbnQoZGZbXCJDb25kaXRp
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoidGlzc3VlX2NvbHMgPSBbY29sIGZvciBjb2wgaW4gZGYuY29sdW1ucyBpZiBcIlRpc3N1ZVwiIGluIGNvbF1cbnByaW50KGRmW3Rpc3N1ZV9jb2xzXS5tZWFuKCkpIn0=
 </script>
 </div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
 <h3 id="add-difference-column-tissue-a-b">5. Add Difference Column (Tissue A – B)</h3>
+<div class="reveal-solution-container" style="margin-top: 1em;">
+<button onclick="revealSolution(this)" data-code="cheater">Show Solution</button> <input type="text" class="solution-code" placeholder="Enter code">
+<div class="solution-content" style="display: none; margin-top: 0.5em;">
 <div>
 <div id="pyodide-27" class="exercise-cell">
 
@@ -621,10 +652,15 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoidGlzc3VlX2NvbHMgPSBbY29s
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGZbXCJEaWZmX0FCXCJdID0gZGZbXCJUaXNzdWVfQVwiXSAtIGRmW1wiVGlzc3VlX0JcIl1cbnByaW50KGRmW1tcIkdlbmVcIiwgXCJEaWZmX0FCXCJdXS5oZWFkKCkpIn0=
 </script>
 </div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
 <h3 id="filter-tissue-c-9-and-biomarker-true">6. Filter: Tissue C &gt; 9 and Biomarker = True</h3>
+<div class="reveal-solution-container" style="margin-top: 1em;">
+<button onclick="revealSolution(this)" data-code="cheater">Show Solution</button> <input type="text" class="solution-code" placeholder="Enter code">
+<div class="solution-content" style="display: none; margin-top: 0.5em;">
 <div>
 <div id="pyodide-28" class="exercise-cell">
 
@@ -633,10 +669,15 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGZbXCJEaWZmX0FCXCJdID0g
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZmlsdGVyZWQgPSBkZlsoZGZbXCJUaXNzdWVfQ1wiXSA+IDkpICYgKGRmW1wiQmlvbWFya2VyXCJdID09IFRydWUpXVxucHJpbnQoZmlsdGVyZWQpIn0=
 </script>
 </div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
 <h3 id="scatter-plot-tissue-a-vs-b-colored-by-biomarker">7. Scatter Plot (Tissue A vs B, colored by Biomarker)</h3>
+<div class="reveal-solution-container" style="margin-top: 1em;">
+<button onclick="revealSolution(this)" data-code="cheater">Show Solution</button> <input type="text" class="solution-code" placeholder="Enter code">
+<div class="solution-content" style="display: none; margin-top: 0.5em;">
 <div>
 <div id="pyodide-29" class="exercise-cell">
 
@@ -645,6 +686,14 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZmlsdGVyZWQgPSBkZlsoZGZb
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IG1hdHBsb3RsaWIucHlwbG90IGFzIHBsdFxuXG5jb2xvcnMgPSBkZltcIkJpb21hcmtlclwiXS5tYXAoe1RydWU6IFwicmVkXCIsIEZhbHNlOiBcImJsdWVcIn0pXG5cbmRmLnBsb3Quc2NhdHRlcih4PVwiVGlzc3VlX0FcIiwgeT1cIlRpc3N1ZV9CXCIsIGM9Y29sb3JzKVxucGx0LnRpdGxlKFwiVGlzc3VlIEEgdnMgQiAoQmlvbWFya2VyIENvbG9yKVwiKVxucGx0LnNob3coKSJ9
 </script>
 </div>
+</div>
+</div>
+</section>
+<section id="more-references" class="slide level2">
+<h2>More references</h2>
+<p><a href="https://github.com/jbossios/python-tutorial/tree/c2db1696439b23c0e4c02eff680bf61e45caab7e?tab=readme-ov-file">Python course for data analysis</a></p>
+<p><a href="https://github.com/TirendazAcademy/PANDAS-TUTORIAL">PANDAS-TUTORIAL</a></p>
+<p><a href="https://pandas.pydata.org/docs/getting_started/index.html">Pandas</a></p>
 
 <script type="pyodide-data">
 eyJvcHRpb25zIjp7ImVudiI6eyJQTE9UTFlfUkVOREVSRVIiOiJwbG90bHlfbWltZXR5cGUifSwiaW5kZXhVUkwiOiJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvcHlvZGlkZS92MC4yNy4wL2Z1bGwvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsicHlvZGlkZV9odHRwIiwibWljcm9waXAiLCJpcHl0aG9uIl19fQ==

@@ -192,6 +192,20 @@
       margin-right: 0; 
     }
   </style>
+  <script>
+  function revealSolution(button) {
+    const container = button.closest(".reveal-solution-container");
+    const input = container.querySelector(".solution-code").value;
+    const content = container.querySelector(".solution-content");
+    const correctCode = button.getAttribute("data-code") || "cheater";
+
+    if (input === correctCode) {
+      content.style.display = "block";
+    } else {
+      alert("Wrong code!");
+    }
+  }
+  </script>
   <script type="module" src="slides_files/libs/quarto-ojs/quarto-ojs-runtime.js"></script>
   <link href="slides_files/libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 </head>
@@ -705,6 +719,9 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiY2xhc3MgQ291bnRlcjpcbiAg
 <section class="slide level2">
 
 <h3 id="solution">Solution</h3>
+<div class="reveal-solution-container" style="margin-top: 1em;">
+<button onclick="revealSolution(this)" data-code="cheater">Show Solution</button> <input type="text" class="solution-code" placeholder="Enter code">
+<div class="solution-content" style="display: none; margin-top: 0.5em;">
 <div>
 <div id="pyodide-33" class="exercise-cell">
 
@@ -712,6 +729,8 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiY2xhc3MgQ291bnRlcjpcbiAg
 <script type="pyodide-33-contents">
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic3R1ZGVudHMgPSBbXG4gICAge1xuICAgICAgICBcIm5hbWVcIjogXCJBbGljZVwiLFxuICAgICAgICBcImFnZVwiOiAyMCxcbiAgICAgICAgXCJncmFkZXNcIjoge1wiTWF0aFwiOiA4NSwgXCJCaW9cIjogOTJ9XG4gICAgfSxcbiAgICB7XG4gICAgICAgIFwibmFtZVwiOiBcIkJvYlwiLFxuICAgICAgICBcImFnZVwiOiAyMixcbiAgICAgICAgXCJncmFkZXNcIjoge1wiTWF0aFwiOiA3MywgXCJDU1wiOiA4OH1cbiAgICB9XG5dIn0=
 </script>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level2">
@@ -725,6 +744,9 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic3R1ZGVudHMgPSBbXG4gICAg
 <section class="slide level2">
 
 <h3 id="solution-1">Solution</h3>
+<div class="reveal-solution-container" style="margin-top: 1em;">
+<button onclick="revealSolution(this)" data-code="cheater">Show Solution</button> <input type="text" class="solution-code" placeholder="Enter code">
+<div class="solution-content" style="display: none; margin-top: 0.5em;">
 <div>
 <div id="pyodide-34" class="exercise-cell">
 
@@ -732,6 +754,8 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic3R1ZGVudHMgPSBbXG4gICAg
 <script type="pyodide-34-contents">
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGVmIGdldF9hbGxfbmFtZXMoc3R1ZGVudHMpOlxuICAgIHJldHVybiBbc3R1ZGVudFtcIm5hbWVcIl0gZm9yIHN0dWRlbnQgaW4gc3R1ZGVudHNdXG5cbmRlZiBjYWxjdWxhdGVfYXZlcmFnZShncmFkZXMpOlxuICAgIHJldHVybiBzdW0oZ3JhZGVzLnZhbHVlcygpKSAvIGxlbihncmFkZXMpXG5cblxucHJpbnQoZ2V0X2FsbF9uYW1lcyhzdHVkZW50cz1zdHVkZW50cykpXG5cbnByaW50KGNhbGN1bGF0ZV9hdmVyYWdlKHN0dWRlbnRzWzBdW1wiZ3JhZGVzXCJdKSkifQ==
 </script>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level2">
@@ -743,12 +767,12 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGVmIGdldF9hbGxfbmFtZXMo
 <li><p>Compute the average for the student</p></li>
 <li><p>Display infos (whatever you want to print)</p></li>
 </ul>
-<p>## More references</p>
-<p><a href="https://github.com/jbossios/python-tutorial/tree/c2db1696439b23c0e4c02eff680bf61e45caab7e?tab=readme-ov-file">Python course for data analysis</a></p>
-<p><a href="https://docs.python.org/3/tutorial/">The Python tutorial</a></p>
 </section>
 <section id="solution-2" class="slide level2">
 <h2>Solution</h2>
+<div class="reveal-solution-container" style="margin-top: 1em;">
+<button onclick="revealSolution(this)" data-code="cheater">Show Solution</button> <input type="text" class="solution-code" placeholder="Enter code">
+<div class="solution-content" style="display: none; margin-top: 0.5em;">
 <div>
 <div id="pyodide-35" class="exercise-cell">
 
@@ -757,6 +781,13 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGVmIGdldF9hbGxfbmFtZXMo
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiY2xhc3MgU3R1ZGVudDpcbiAgICBkZWYgX19pbml0X18oc2VsZiwgbmFtZSwgYWdlLCBncmFkZXM9Tm9uZSk6XG4gICAgICAgIHNlbGYubmFtZSA9IG5hbWVcbiAgICAgICAgc2VsZi5hZ2UgPSBhZ2VcbiAgICAgICAgc2VsZi5ncmFkZXMgPSBncmFkZXMgb3Ige31cblxuICAgIGRlZiBhZGRfZ3JhZGUoc2VsZiwgY291cnNlLCBncmFkZSk6XG4gICAgICAgIHNlbGYuZ3JhZGVzW2NvdXJzZV0gPSBncmFkZVxuXG4gICAgZGVmIGF2ZXJhZ2Uoc2VsZik6XG4gICAgICAgIHJldHVybiBzdW0oc2VsZi5ncmFkZXMudmFsdWVzKCkpIC8gbGVuKHNlbGYuZ3JhZGVzKVxuXG4gICAgZGVmIGluZm9zKHNlbGYpOlxuICAgICAgICByZXR1cm4gZlwie3NlbGYubmFtZX0gKHtzZWxmLmFnZX0pOiB7c2VsZi5hdmVyYWdlKCl9XCJcblxuc3R1ZGVudCA9IFN0dWRlbnQoXCJUaGVvcGhpbGVcIiwgMzkpXG5zdHVkZW50LmFkZF9ncmFkZShcIm1hdGhcIiwgNjApXG5zdHVkZW50LmFkZF9ncmFkZShcInNwb3J0XCIsIDg1KVxuXG5wcmludChzdHVkZW50LmluZm9zKCkpIn0=
 </script>
 </div>
+</div>
+</div>
+</section>
+<section id="more-references" class="slide level2">
+<h2>More references</h2>
+<p><a href="https://github.com/jbossios/python-tutorial/tree/c2db1696439b23c0e4c02eff680bf61e45caab7e?tab=readme-ov-file">Python course for data analysis</a></p>
+<p><a href="https://docs.python.org/3/tutorial/">The Python tutorial</a></p>
 
 <script type="pyodide-data">
 eyJvcHRpb25zIjp7ImVudiI6eyJQTE9UTFlfUkVOREVSRVIiOiJwbG90bHlfbWltZXR5cGUifSwiaW5kZXhVUkwiOiJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvcHlvZGlkZS92MC4yNy4wL2Z1bGwvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsicHlvZGlkZV9odHRwIiwibWljcm9waXAiLCJpcHl0aG9uIl19fQ==
