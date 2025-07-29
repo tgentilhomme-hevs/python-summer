@@ -190,6 +190,16 @@
     ]
   },
   {
+    "objectID": "Course4/index.html#content",
+    "href": "Course4/index.html#content",
+    "title": "4  Numpy",
+    "section": "Content",
+    "text": "Content\n👨🏻‍🏫 Slides Slides PDF",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Numpy</span>"
+    ]
+  },
+  {
     "objectID": "Course5/index.html",
     "href": "Course5/index.html",
     "title": "5  Pandas",
@@ -215,6 +225,16 @@
     "title": "5  Pandas",
     "section": "Topics",
     "text": "Topics\n\nDataFrame and Series basics\nLoad CSV files\nFilter rows, select columns\nCompute stats\nHandle missing data\nSimple plots",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Pandas</span>"
+    ]
+  },
+  {
+    "objectID": "Course5/index.html#content",
+    "href": "Course5/index.html#content",
+    "title": "5  Pandas",
+    "section": "Content",
+    "text": "Content\n👨🏻‍🏫 Slides Slides PDF",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Pandas</span>"
     ]
