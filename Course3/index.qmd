@@ -12,7 +12,7 @@
 - Work with lists of dictionaries as datasets
 - Practice building objects from data, use object in lists, etc.
 
-# Content
+## Content
 
 [👨🏻‍🏫 Slides]({{< var base_url>}}slides/Course3/slides.html){.btn .btn-outline-primary .btn role="button"} 
 [Slides PDF]({{< var base_url>}}slides/Course3/slides.pdf){.btn .btn-outline-secondary .btn role="button"} 
