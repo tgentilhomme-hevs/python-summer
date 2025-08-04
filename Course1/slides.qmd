@@ -124,13 +124,13 @@ print("In 5 years, you’ll be", age + 5)
 
 ## Variable
 
-A variable is a name that stores a value in your program, like a labeled box that holds data.
+- A variable is a name that stores a value in your program, like a labeled box that holds data.
 
-It lets you remember values (like numbers, text, results of calculations)
+- It lets you remember values (like numbers, text, results of calculations)
 
-You can use or change the value later
+- You can use or change the value later
 
-Python creates the variable when you assign it a value
+- Python creates the variable when you assign it a value
 
 ## Variable: example
 
@@ -184,11 +184,11 @@ print("Nothing:", nothing, "->", type(nothing))
 
 ## Everything is an Object in Python
 
-Objects have data (attributes) and behaviors (methods)
+- Objects have data (attributes) and behaviors (methods)
 
-You can call methods with dot syntax: object.method()
+- You can call methods with dot syntax: object.method()
 
-Even simple things like numbers and strings are full objects
+- Even simple things like numbers and strings are full objects
 
 ## Everything is an Object in Python
 

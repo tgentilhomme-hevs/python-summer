@@ -188,6 +188,8 @@ Method
 - `predict_growth(time)`
 - `math` package for exp, log functions
 
+---
+
 Using formula:
 $$
 G(t) = S \cdot e^{-\frac{(T - 37)^2}{20}} \cdot \left(1 - 0.3 \cdot \left| \text{pH} - 7 \right| \right) \cdot \ln(t + 1)
