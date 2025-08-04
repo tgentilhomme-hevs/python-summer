@@ -12,6 +12,7 @@ format:
     logo: https://www.hevs.ch/_nuxt/img/logo_hesso.9af1d79.svg
     footer: "Files, Data & Practice"
     include-in-header: ../_includes/revealscript.html
+    include-after-body: ../_includes/backbutton.html
     
 execute:
   echo: true       # ← this shows code
