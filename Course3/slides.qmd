@@ -147,6 +147,8 @@ print(loaded["skills"])
 
 We will work with simulated growth data of bacterial colonies under different conditions.
 
+Download the dataset is [here](./colonies.json)
+
 Objectives:
 
 1. Load and inspect the dataset (JSON)
