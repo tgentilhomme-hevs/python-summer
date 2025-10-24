@@ -6,13 +6,13 @@
 <script src="slides_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="slides_files/libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="slides_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="slides_files/libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="slides_files/libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.34">
+  <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content="Théophile Gentilhomme">
-  <meta name="dcterms.date" content="2025-09-05">
+  <meta name="dcterms.date" content="2025-10-24">
   <title>Python Summer Course</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -98,7 +98,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-6877171fd60a45fadc964ff400f20908.css">
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-f513bb2d271e9465efb636bc7b96d734.css">
   <link href="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -225,7 +225,7 @@ Théophile Gentilhomme
 </div>
 </div>
 
-  <p class="date">September 5, 2025</p>
+  <p class="date">October 24, 2025</p>
 </section>
 <section id="introduction" class="slide level2">
 <h2>Introduction</h2>
@@ -388,17 +388,17 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicHJpbnQoZGYubG9jW2RmW1wi
 <section class="slide level2">
 
 <h3 id="loading-files">Loading files</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href=""></a><span class="co"># Load a CSV file from a URL or local path</span></span>
 <span id="cb1-3"><a href=""></a>df <span class="op">=</span> pd.read_csv(<span class="st">"my_data.csv"</span>)  <span class="co"># or from a URL</span></span>
-<span id="cb1-4"><a href=""></a><span class="bu">print</span>(df.head())  <span class="co"># Show first 5 rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href=""></a><span class="bu">print</span>(df.head())  <span class="co"># Show first 5 rows</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Use <code>sep=";"</code> if using semicolon separator</li>
 <li>Use <code>encoding="utf-8"</code> if needed</li>
 <li>Can use a column as row indexes <code>index_col="thisCol"</code></li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="co"># Load an Excel File</span></span>
-<span id="cb2-2"><a href=""></a>df <span class="op">=</span> pd.read_excel(<span class="st">"my_data.xlsx"</span>, sheet_name<span class="op">=</span><span class="st">"Sheet1"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="co"># Load an Excel File</span></span>
+<span id="cb2-2"><a href=""></a>df <span class="op">=</span> pd.read_excel(<span class="st">"my_data.xlsx"</span>, sheet_name<span class="op">=</span><span class="st">"Sheet1"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="compute-stats-and-explore-data" class="slide level2">
 <h2>Compute Stats and Explore Data</h2>
@@ -905,7 +905,7 @@ WyJnZW5lX2V4cHJlc3Npb25fZGF0YS5jc3YiXQ==
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -1012,13 +1012,14 @@ WyJnZW5lX2V4cHJlc3Npb25fZGF0YS5jc3YiXQ==
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
