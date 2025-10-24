@@ -15,6 +15,7 @@ book:
     - Course3/index.qmd
     - Course4/index.qmd
     - Course5/index.qmd
+    - Course6/index.qmd
 
 format:
   live-html:
