@@ -238,5 +238,15 @@
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Pandas</span>"
     ]
+  },
+  {
+    "objectID": "Course6/index.html",
+    "href": "Course6/index.html",
+    "title": "6  Preoparatory crash course for FDL",
+    "section": "",
+    "text": "Content\nThis gives you the minimal concepts to be able to follow the Fundamentals of Deep Learning Workshop.\n👨🏻‍🏫 Slides Slides PDF",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Preoparatory crash course for FDL</span>"
+    ]
   }
 ]
