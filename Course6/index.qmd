@@ -1,0 +1,9 @@
+# Preoparatory crash course for FDL
+
+This gives you the minimal concepts to be able to follow the Fundamentals of Deep Learning Workshop.
+
+
+## Content
+
+[👨🏻‍🏫 Slides]({{< var base_url>}}slides/Course6/slides.html){.btn .btn-outline-primary .btn role="button"} 
+[Slides PDF]({{< var base_url>}}slides/Course6/slides.pdf){.btn .btn-outline-secondary .btn role="button"} 

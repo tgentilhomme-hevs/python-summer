@@ -1,0 +1,341 @@
+---
+title: "Carsh course"
+subtitle: "for FDL"
+format:
+  live-revealjs:
+    slide-number: true
+    brand: ../_brand.yml
+    theme: ../hevs.scss
+    show-slide-number: all
+    preview-links: auto
+    chalkboard: true
+    logo: https://www.hevs.ch/_nuxt/img/logo_hesso.9af1d79.svg
+    footer: "Crash Course"
+    include-in-header: ../_includes/revealscript.html
+    include-after-body: ../_includes/backbutton.html
+    
+execute:
+  echo: true       # ← this shows code
+  output: true     # ← this shows output
+  eval: true       # ← this runs the code
+---
+
+
+## Imports
+
+- You import modules to access functions/classes they provide.
+- Common stack for DL: math, random, numpy, torch, pandas, matplotlib.pyplot.
+
+```{pyodide}
+import math, random
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+print("Modules imported!")
+```
+
+---
+
+## Imports (example)
+
+```{pyodide}
+# Use the math module
+print("sqrt(16) =", math.sqrt(16))
+
+# Use numpy
+arr = np.array([1, 2, 3])
+print("mean:", arr.mean())
+
+# Use torch
+t = torch.tensor([1., 2., 3.])
+print("torch sum:", t.sum().item())
+```
+
+---
+
+## Exercise: Imports
+
+```{pyodide}
+# TODO: Import the statistics module as stats
+# TODO: Create a list vals = [1, 2, 2, 3, 4]
+# TODO: Print the mean and median using stats.mean and stats.median
+```
+
+---
+
+## Functions
+
+- Functions group reusable logic.
+- Signature, arguments, return value
+
+```{pyodide}
+def add(a, b):
+    return a + b
+
+print(add(2, 3))
+```
+
+---
+
+## Functions (example)
+
+```{pyodide}
+def relu(x):
+    return x if x > 0 else 0
+
+print([relu(v) for v in [-2, 0, 3]])
+```
+
+---
+
+## Exercise: Functions
+
+```{pyodide}
+# TODO: Write a function `square(x)` that returns x**2
+# TODO: Test on x = -3, 0, 5
+```
+
+---
+
+## Objects: attributes & methods
+
+- Objects carry data (attributes) and behavior (methods).
+
+```{pyodide}
+text = "Deep Learning"  # This is an object
+print(text.upper())     # method
+print(len(text))        # function
+```
+
+---
+
+## Exercise: Objects
+
+```{pyodide}
+# List s are objects too
+# TODO: Create a list of 3 numbers
+# TODO: Use a method to append a new number
+# TODO: Use len() to print the list length
+```
+
+---
+
+## Class (concept)
+
+- A class defines a blueprint for objects.
+- Special method `__init__` initializes attributes.
+- Methods implement behavior.
+
+```{pyodide}
+class Animal:
+    def __init__(self, name):
+        self.name = name
+        self.alive = True
+
+    def speak(self):
+        if self.alive:
+          print(f"{self.name} makes a sound.")
+        else:
+          print(f"{self.name} is not with us anymore...")
+
+    def is_alive(self):
+        return self.alive
+      
+    def dies(self):
+        self.alive = False
+
+dog = Animal("Dog")
+dog.speak()
+```
+
+---
+
+## Inheritance
+
+- Specialized classes can inherit from a base class and override methods.
+
+```{pyodide}
+class Dog(Animal):
+    def speak(self):
+        print(f"{self.name} barks!")
+
+dog = Dog("Rex") # Create an object
+dog.speak() # call a method
+# But keeps prent methods
+print(dog.is_alive)
+```
+
+---
+
+## Exercise: Class & Inheritance
+
+```{pyodide}
+# TODO: Create a class `Cat` that inherits from Animal
+# TODO: Override speak() to print "<name> meows!"
+```
+
+---
+
+## Arrays (concept)
+
+- numpy.ndarray stores numeric data efficiently.
+- Vectorized operations operate on whole arrays at once (fast, concise).
+
+```{pyodide}
+A = np.array([[1, 2],
+              [3, 4]], dtype=float)
+
+B = np.array([[10, 20],
+              [30, 40]], dtype=float)
+
+print("A:\n", A)
+print("B:\n", B)
+print("A + B:\n", A + B)
+print("A * B (elementwise):\n", A * B)
+```
+
+---
+
+## Shape and size (concept)
+
+```{pyodide}
+x = np.random.randn(2, 3, 4)
+print("Shape:", x.shape)
+print("Number of elements:", x.size)
+```
+
+---
+
+## Batch (first dimension)
+
+- In DL, the first dimension often represents batch size (number of samples).
+
+```{pyodide}
+# 4 samples, each with 3 features
+batch = np.random.randn(4, 3)
+print("Shape:", batch.shape)     # (4, 3)
+print("First sample:", batch[0]) # shape (3,)
+```
+
+---
+
+## Exercise: Batch
+
+```{pyodide}
+# TODO: Create an array of shape (5, 2) with random values (e.g., np.random.randn)
+# TODO: Print its shape and first sample
+```
+
+---
+
+## Reshape
+
+- Reshape changes the view of the data without copying when possible.
+
+```{pyodide}
+r = np.arange(6)              # [0..5]
+print("Original:", r, r.shape)
+
+R = r.reshape(2, 3)
+print("Reshaped (2x3):\n", R, R.shape)
+
+```
+
+## Pandas (overview + example)
+
+- Tabular data structure (DataFrame), fast I/O, data cleaning, joins, groupby.
+
+```{pyodide}
+data = {
+    "Name": ["Alice", "Bob", "Carol"],
+    "Score": [85, 90, 95]
+}
+df = pd.DataFrame(data)
+df.head()
+```
+
+---
+
+## Exercise: Pandas
+
+```{pyodide}
+# TODO: Create a DataFrame with columns "Gene" and "Expression"
+# TODO: Display the first 3 rows
+```
+
+---
+
+## Matplotlib (plot example)
+
+```{pyodide}
+x = np.linspace(0, 2*np.pi, 100)
+y = np.sin(x)
+
+plt.plot(x, y)
+plt.title("Sine wave")
+plt.show()
+```
+
+---
+
+## Matplotlib (image visualization)
+
+- Use plt.imshow to display 2D arrays as images.
+- cmap="gray" for grayscale (optional).
+
+```{pyodide}
+# Create a simple 28x28 "digit-like" blob
+img = np.zeros((28, 28), dtype=float)
+img[8:20, 10:18] = 128
+img[10:18, 12:16] = 255
+
+plt.imshow(img, cmap="gray")
+plt.title("Synthetic 28x28 image")
+plt.axis("off")
+plt.show()
+```
+
+---
+
+## Exercise: Matplotlib (image)
+
+```{pyodide}
+# TODO: Create a 32x32 gradient image where value increases left->right
+# TODO: Display it with plt.imshow (optionally cmap="gray"), remove axes
+```
+
+---
+
+## Python essentials
+
+- f-strings: quick formatting (logging, metrics)
+- Comprehensions: concise list/dict creation
+- enumerate / zip: clean loops
+
+```{pyodide}
+# f-strings
+epoch, loss = 5, 0.1234
+print(f"[epoch {epoch}] loss={loss:.4f}")
+
+# Comprehensions
+squares = [i*i for i in range(5)]
+mapping = {c:i for i, c in enumerate("abc")}
+print(squares, mapping)
+
+# enumerate / zip
+for i, (a, b) in enumerate(zip([1,2,3], [10,20,30])):
+    print(i, a, b)
+
+```
+
+---
+
+## Exercise: Python essentials
+
+```{pyodide}
+# TODO:
+# 1) Using a list comprehension, build cubes = [n**3 for n in range(6)]
+# 2) Use enumerate to print index/value pairs from cubes
+# 3) Print "epoch=<e> acc=<a>%" using an f-string with e=3, a=97.5
+```
