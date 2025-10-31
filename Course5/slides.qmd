@@ -325,7 +325,7 @@ plt.show()
 
 You are given a dataset `gene_expression_data.cvs`. There is no descriptions, but you need to explore and make some analyses.
 
-1. Load the file using Pandas
+1. Load the file using Pandas. File available [here](./gene_expression_data.csv)
 2. Explore it using the functions seen in this course
 3. Check how many treated vs healthy samples there are using `value_counts()` on the column or using boolean condition
 
